@@ -1,0 +1,141 @@
+digraph MBR {
+	node [shape=plaintext]
+	struct1 [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">  <TR>
+                        <TD>REPORTE MBR</TD>
+                        <TD>    </TD>
+                    </TR>
+                    <TR>
+                        <TD>mbr_tamaño:</TD>
+                        <TD>12582912</TD>
+                    </TR>
+                    <TR>
+                        <TD>mbr_fecha_creacion:</TD>
+                        <TD>2023-09-23 18:25:56</TD>
+                    </TR>
+                    <TR>
+                        <TD>mbr_disk_signature:</TD>
+                        <TD>1947</TD>
+                    </TR>
+                    
+                    <TR>
+                        <TD>PARTICION</TD>
+                        <TD>    </TD>
+                    </TR>
+                    <TR>
+                        <TD>part_status:</TD>
+                        <TD>1</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_type</TD>
+                        <TD>P</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_fit</TD>
+                        <TD>W</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_start</TD>
+                        <TD>56</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_size</TD>
+                        <TD>4194304</TD>
+                    </TR>
+                     <TR>
+                        <TD>part_name</TD>
+                        <TD>cosa</TD>
+                    </TR>
+
+        
+                    <TR>
+                        <TD>PARTICION</TD>
+                        <TD>    </TD>
+                    </TR>
+                    <TR>
+                        <TD>part_status:</TD>
+                        <TD>1</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_type</TD>
+                        <TD>E</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_fit</TD>
+                        <TD>W</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_start</TD>
+                        <TD>70</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_size</TD>
+                        <TD>0</TD>
+                    </TR>
+                     <TR>
+                        <TD>part_name</TD>
+                        <TD></TD>
+                    </TR>
+
+        
+                    <TR>
+                        <TD>PARTICION</TD>
+                        <TD>    </TD>
+                    </TR>
+                    <TR>
+                        <TD>part_status:</TD>
+                        <TD>1</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_type</TD>
+                        <TD>L</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_fit</TD>
+                        <TD>W</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_start</TD>
+                        <TD>21092675</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_size</TD>
+                        <TD>1392508928</TD>
+                    </TR>
+                     <TR>
+                        <TD>part_name</TD>
+                        <TD></TD>
+                    </TR>
+
+        
+                    <TR>
+                        <TD>PARTICION</TD>
+                        <TD>    </TD>
+                    </TR>
+                    <TR>
+                        <TD>part_status:</TD>
+                        <TD>1</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_type</TD>
+                        <TD>L</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_fit</TD>
+                        <TD>W</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_start</TD>
+                        <TD>808464689</TD>
+                    </TR>
+                    <TR>
+                        <TD>part_size</TD>
+                        <TD>808464432</TD>
+                    </TR>
+                     <TR>
+                        <TD>part_name</TD>
+                        <TD>0000000000000000</TD>
+                    </TR>
+
+        </TABLE>>]
+}

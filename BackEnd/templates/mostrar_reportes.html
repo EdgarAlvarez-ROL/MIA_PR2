@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f1f1f1;
+            color: #333;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #032d3a;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 14px;
+            color: #032d3a;
+        }
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            text-align: center; /* Para centrar el texto e imagen */
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .image-container img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 10px;
+            border: 2px solid #d6e6eb; /* Borde alrededor de la imagen */
+            border-radius: 10px; /* Esquinas redondeadas para la imagen */
+            margin: 0 auto; /* Para centrar la imagen dentro del contenedor */
+            display: block; /* Asegura que la imagen se centre correctamente */
+        
+        }
+
+        /* img {
+            max-width: 100%;
+        }
+
+        button {
+            margin-bottom: 20px;
+        } */
+
+        /* BOTONES DE ESQUINAS */
+        /* Estilos para el botón */
+        .back-button {
+            position: fixed;
+            top: 20px; /* Posición desde arriba */
+            right: 20px; /* Posición desde la derecha */
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            background-color: #29ce6e;
+            color: #fff;
+            border-radius: 5px;
+            border: 2px solid #49e68f;
+            transition: background-color 0.3s ease-in-out; /* Transición suave */
+        }
+
+        /* Estilo al pasar el ratón */
+        .back-button:hover {
+            background-color: #118681;
+        }
+        /* FIN BOTONES */
+        .back-button2 {
+            position: fixed;
+            top: 20px; /* Posición desde arriba */
+            left: 20px; /* Posición desde la izquierda */
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            background-color: #ce29ce;
+            color: #fff;
+            border-radius: 5px;
+            border: 2px solid #d449e6;
+            transition: background-color 0.3s ease-in-out; /* Transición suave */
+        }
+
+        /* Estilo al pasar el ratón */
+        .back-button2:hover {
+            background-color: #52062c;
+        }
+    </style>
+    <title>REPORTES</title>
+</head>
+<body>
+    <button class="back-button2" onclick="toggleContainers()">Alternar entre Reportes</button>
+    <a href="/" class="back-button">Login</a>
+    
+    <div id="container1" class="image-container">
+        <h1>REPORTES IMAGEN</h1>
+        <img src="static/reportes_imagen/mitsuri_comiendo_color.png" alt="Imagen 1">
+        <br><br>
+        <img src="static/reportes_imagen/mitsuri_comiendo_color.png" alt="Imagen 1">
+        <h2>MBR</h2>
+        <h2>DISK</h2>
+        <h2>BM_INODE</h2>
+        <h2>BM_BLOC</h2>
+        <h2>SB (SUPERBLOQUE)</h2>
+        <h2>TREE</h2>
+        <h2>FILE</h2>
+    </div>
+
+    
+    <div id="container2">
+        <h1>REPORTES PDF</h1>
+        <iframe src="static/reportes_pdf/DISK.pdf" &embedded=true" style="width:100%; height:100%;" frameborder="0" ></iframe>
+        <br><br>
+        <iframe src="static/reportes_pdf/MBR.pdf.pdf" &embedded=true" style="width:100%; height:450px;" frameborder="0" ></iframe>
+        <h2>MBR</h2>
+        <h2>DISK</h2>
+        <h2>BM_INODE</h2>
+        <h2>BM_BLOC</h2>
+        <h2>SB (SUPERBLOQUE)</h2>
+        <h2>TREE</h2>
+        <h2>FILE</h2>
+    </div>
+
+
+    <script>
+        // Mostrar la imagen 1 al inicio
+        var container1 = document.getElementById('container1');
+        container1.style.display = 'block';
+
+        function toggleContainers() {
+            var container1 = document.getElementById('container1');
+            var container2 = document.getElementById('container2');
+
+            if (container1.style.display === 'none') {
+                container1.style.display = 'block';
+                container2.style.display = 'none';
+            } else {
+                container1.style.display = 'none';
+                container2.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

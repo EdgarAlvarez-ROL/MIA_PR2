@@ -1,0 +1,1 @@
+mkfile -size=15-path=/home/user/docs/a.txt -r

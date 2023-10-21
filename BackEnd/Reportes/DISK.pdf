@@ -1,0 +1,19 @@
+digraph DISK {
+	node [shape=plaintext]
+	struct2 [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"> 
+        <tr>
+            <td>MBR</td>
+            <td>ESPACIO LIBRE 
+ -26214299M -259547.51485148515%</td>
+            <td>PARTICION 1 
+ 26214400</td>
+            <td>PARTICION 2 
+ 0</td>
+            <td>PARTICION 3 
+ 0</td>
+            <td>PARTICION 4 
+ 0</td>
+        </tr>
+</TABLE>>]
+}

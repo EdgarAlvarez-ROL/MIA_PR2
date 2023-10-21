@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de Login</title>
+    
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center; /* Para centrar el contenido dentro del body */
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hora {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido</h1>
+        <form action="/login" method="post">
+            <label for="username">Usuario:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Contraseña:</label><br>
+            <input type="password" id="password" name="password"><br>
+            <label for="id">ID:</label><br>
+            <input type="id" id="id" name="id"><br><br>
+            <input type="submit" value="Iniciar sesión">
+        </form>
+
+        {% if mensaje %}
+        <div>{{ mensaje }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subir y Detectar Archivos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Estilos generales para el botón */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Estilo para el botón principal */
+        .primary-button {
+            color: #fff;
+            background-color: #3498db; /* Color de fondo principal */
+            border: 2px solid #3498db;
+        }
+
+        /* Efecto hover para el botón principal */
+        .primary-button:hover {
+            background-color: #185075; /* Color de fondo al pasar el ratón */
+        }
+
+        /* Estilo para el botón secundario */
+        .secondary-button {
+            color: #fff;
+            background-color: #2ecc71; /* Color de fondo secundario */
+            border: 2px solid #2ecc71;
+        }
+
+        /* Efecto hover para el botón secundario */
+        .secondary-button:hover {
+            background-color: #27ae60; /* Color de fondo al pasar el ratón */
+        }
+
+        /* Estilo para un botón de color personalizado */
+        .custom-button {
+            color: #fff;
+            background-color: #e74c3c; /* Color de fondo personalizado */
+            border: 2px solid #e74c3c;
+        }
+
+        /* Efecto hover para el botón personalizado */
+        .custom-button:hover {
+            background-color: #c0392b; /* Color de fondo al pasar el ratón */
+        }
+
+        /* BOTONES DE ESQUINAS */
+        /* Estilos para el botón */
+        .back-button {
+            position: fixed;
+            top: 20px; /* Posición desde arriba */
+            right: 20px; /* Posición desde la derecha */
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            background-color: #29ce6e;
+            color: #fff;
+            border-radius: 5px;
+            border: 2px solid #49e68f;
+            transition: background-color 0.3s ease-in-out; /* Transición suave */
+        }
+
+        /* Estilo al pasar el ratón */
+        .back-button:hover {
+            background-color: #096863;
+        }
+        /* FIN BOTONES */
+
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+        #drop-area {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        #file-input {
+            display: none;
+        }
+        label[for="file-input"] {
+        transition: background-color 0.3s, color 0.3s; /* Añadimos color a la transición */
+        padding: 10px;
+        transition: font-size 0.3s ease-in-out; /* Transición suave */
+        }
+        label[for="file-input"]:hover {
+            font-weight: bold;
+            background-color: #fafaff; /* Cambia el color de fondo al pasar el ratón */
+            font-size: 1.1em; /* Aumenta el tamaño del texto */
+            color: #062c46; /* Cambia el color del texto al pasar el ratón */
+        }
+        .large-text-input {
+            width: 1200px; /* Ancho deseado */
+            height: 280px; /* Alto deseado */
+            font-size: 1.2em; /* Tamaño del texto */
+        }
+    </style>
+</head>
+<body>
+        
+   
+    <form action="/logout" method="post" enctype="multipart/form-data">
+        <!-- <a href="/" class="back-button">Login</a> -->
+        <input type="submit" value="LOGOUT" class="back-button">
+    </form>
+
+
+
+    <!-- <h1>Subir y Detectar Archivos</h1> -->
+
+    <h1>Subir archivo</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file-input">Selecciona o arrastra un archivo aquí:</label><br>
+        <input type="file" id="file-input" name="file" accept=".txt, .pdf, .adsj, .mia" />
+        <br><br>
+        <input type="submit" value="Subir archivo" class="button primary-button">
+        <br><br>
+    </form>
+
+    <div id="drop-area">
+        <p>Arrastra y suelta un archivo aquí</p>
+    </div>
+    
+
+    <h2>Informacion del Archivo</h2>
+    <!-- <input type="text" id="text-input1" class="large-text-input" value="{{ initial_text }}"><br><br> -->
+    
+    <!-- <textarea id="miTextarea" rows="5" cols="40">{{ initial_text }}</textarea> -->
+    <form action="/ejecutar_comandos" method="post" enctype="multipart/form-data">
+        <textarea type="text" id="text-input1" name="text-input1" class="large-text-input">{{ initial_text }}</textarea><br><br>
+        <input type="submit" value="Ejecutar Comandos" class="button primary-button">
+        <h2>Salida en Consola</h2>
+        <textarea type="text" id="text-input2" class="large-text-input" readonly>{{ salida_consola }}</textarea><br><br>
+    </form>
+
+    <form action="/ver_reportes" method="post" enctype="multipart/form-data">
+        <input type="submit" value="Ver Reportes" class="button primary-button">
+    </form>
+
+
+    <script>
+        const dropArea = document.getElementById('drop-area');
+        const fileInput = document.getElementById('file-input');
+        const fileNameLabel = document.querySelector('label[for="file-input"]');
+
+        dropArea.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            dropArea.style.backgroundColor = '#e3f2fd';
+        });
+
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.backgroundColor = 'white';
+        });
+
+        dropArea.addEventListener('drop', (event) => {
+            event.preventDefault();
+            dropArea.style.backgroundColor = 'white';
+            const file = event.dataTransfer.files[0];
+            fileInput.files = event.dataTransfer.files;  // Assign the dropped file to the file input
+            handleFile(file);
+        });
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            handleFile(file);
+        });
+
+        function handleFile(file) {
+            if (file) {
+                fileNameLabel.textContent = `Archivo seleccionado: ${file.name}`;
+                fileNameLabel.style.backgroundColor = '#a1a1c5'
+                fileNameLabel.classList.add('file-selected');  // Apply the file-selected class
+            } else {
+                fileNameLabel.textContent = 'Selecciona o arrastra un archivo aquí';
+                fileNameLabel.classList.remove('file-selected');  // Remove the file-selected class
+            }
+        }
+    </script>
+</body>
+</html>
