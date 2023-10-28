@@ -309,6 +309,178 @@ def mkfile(path, ruta_ingresar_archivo, fisrt, user, permisos, uid, gid, relleno
     """"""
     
 
+def mkdir(path, ruta, fisrt, permisos, uid, gid):
+    global ultimo_b_inodo
+
+    # print(name_archivo)
+    # print(ruta)
+    # ruta = ruta_ingresar_archivo.replace(name_archivo, "")
+
+    
+    carpetas = ruta.split("/")
+    del carpetas[0]
+
+    bloque_start = 0
+    s_inode_start = 0
+
+    if fisrt:
+        bloque_start = leerBloquesFinal(path)
+        s_inode_start = firstObtenerPP(path)
+    else:
+        bloque_start = leerFinalSecond()
+        s_inode_start = obtenerPP()
+        ultimo_b_inodo = leerUltimoInodo()
+        
+        
+    
+    # print(type(bloque_start))
+    # bloque_start = int(bloque_start)
+    # print(type(bloque_start))
+
+
+    print(carpetas)
+    for nodo_c in carpetas:
+        salida_consola(nodo_c+"\n")
+
+
+    # print(bloque_start)
+
+
+    # INFORMACION PA QUE NO CRASHEE
+    mbr_format = "<iiiiB"
+    mbr_size = struct.calcsize(mbr_format)
+    # partition_format = "c2s3i3i16s"
+    partition_format = "c2s3i3i16s"
+    partition_size = struct.calcsize(partition_format)
+    data = ""
+    try:
+            
+            with open(path, "rb+") as file:
+                mbr_data = file.read(mbr_size)
+                particion_data = file.read(partition_size)
+                
+                """Block Start"""
+                superBloque_data = file.read(struct.calcsize("<iiiiiddiiiiiiiiii"))
+                superBloque_data = b'\x02\x00\x00\x00)7' + superBloque_data 
+                superBloque_data = superBloque_data[:-6]
+                # print(superBloque_data)F
+                data = struct.unpack("<iiiiiddiiiiiiiiii", superBloque_data)
+                # block_start = data[16]
+                # print(block_start)
+                bloques_carpetas = structs.BloquesCarpetas()
+                bytes_carpetas= bytes(bloques_carpetas)  # Obtener los bytes de la instancia
+                recuperado = bytearray(len(bytes_carpetas))  # Crear un bytearray del mismo tamaño
+                
+                """ AQUI SE EMPIEZA A ESCRIBIR LA INFO DE LA CARPETA """
+                """                                                  """
+                # Crear instancia de BloquesCarpetas
+                block_carpeta = structs.BloquesCarpetas()
+
+                # Obtener el inicio del bloque
+                # bloque_start = leerBloquesFinal(path)
+
+                # Obtener el último PP
+                # s_inode_start = escribirUltimoPP(path)
+
+                for indice, valor in enumerate(carpetas):
+                    print(str(ultimo_b_inodo) + " - " + valor)
+                    if indice == 4:
+                        break
+
+                    block_carpeta.b_content[indice].b_name = valor
+                    block_carpeta.b_content[indice].b_inodo = ultimo_b_inodo
+
+                    if indice == len(carpetas) - 1:
+                        # print(str(ultimo_b_inodo + 1) + " - " + name_archivo)
+                        block_carpeta.b_content[indice].b_name = valor
+                        block_carpeta.b_content[indice].b_inodo = ultimo_b_inodo + 1
+
+                        # Crear inodo de la carpeta
+                        inode = structs.Inodos()
+                        inode.i_uid = int(uid)
+                        inode.i_gid = int(gid)
+                        inode.i_size = 0
+                        inode.i_atime = int(time.time())
+                        inode.i_ctime = int(time.time())
+                        inode.i_mtime = int(time.time())
+                        inode.i_type = 0
+                        inode.i_perm = int(permisos)
+
+                        for cont, _ in enumerate(inode.i_block):
+                            if _ == -1:
+                                inode.i_block[cont] = ultimo_b_inodo + 1
+                                break
+
+                        # Escribir el inodo en el disco
+                        with open(path, "rb+") as bfiles:
+                            bfiles.seek(s_inode_start)
+                            bfiles.write(bytes(inode))
+
+                        s_inode_start += 101
+
+                        # # Crear inodo del archivo
+                        # inode.i_type = 1
+                        # inode.i_size = 0
+                        # inode.i_block[0] = 0
+
+                        # # Escribir el inodo en el disco
+                        # with open(path, "rb+") as bfiles:
+                        #     bfiles.seek(s_inode_start)
+                        #     bfiles.write(bytes(inode))
+
+                        # s_inode_start += 101
+                        escribirUltimoPP(s_inode_start)
+                        escribirUltimoInodo((ultimo_b_inodo+1))
+                        # print("PUTA")
+
+                    else:
+                        block_carpeta.b_content[indice].b_name = valor
+                        block_carpeta.b_content[indice].b_inodo = ultimo_b_inodo
+
+                        inode = structs.Inodos()
+                        inode.i_uid = int(uid)
+                        inode.i_gid = int(gid)
+                        inode.i_size = 0
+                        inode.i_atime = int(time.time())
+                        inode.i_ctime = int(time.time())
+                        inode.i_mtime = int(time.time())
+                        inode.i_type = 0
+                        inode.i_perm = int(permisos)
+
+                        for cont, _ in enumerate(inode.i_block):
+                            if _ == -1:
+                                inode.i_block[cont] = ultimo_b_inodo + 1
+
+                        ultimo_b_inodo += 1
+
+                        with open(path, "rb+") as bfiles:
+                            bfiles.seek(s_inode_start)
+                            bfiles.write(bytes(inode))
+
+                        s_inode_start += 101
+
+                # with open(path, "rb+") as file:
+                file.seek(bloque_start)
+                # file.write(bytes(block_carpeta))
+                # bloque_start += 64
+
+            # Crear instancia de BloquesArchivos
+                # block_archivos = structs.BloquesArchivos()
+                # block_archivos.b_content = relleno_Archivo
+
+
+                file.write(bytes(block_carpeta))
+                # file.write(block_archivos.__bytes__())
+                bloque_start += 128
+
+    except Exception as e:
+        print("\tERROR: No se pudo leer el disco en la ruta: " +path+", debido a: "+str(e))
+                            
+    with open("BackEnd/backs/block_final.txt", 'w') as archivo:
+                    archivo.write(str(bloque_start))
+    """"""
+
+
 def b_block(carpetas):
     contenido_actual = ""
     with open('BackEnd/Reportes/b_block.txt', 'r') as archivo:
@@ -755,7 +927,7 @@ def reporteFILE(path, buscar,contador,path_rep):
                 # print(soy)
                 # Abre el archivo en modo escritura ('w')
                 try:
-                    with open(path_rep, 'w') as archivo:
+                    with open(r"BackEnd\static\reportes_pdf\file.txt", 'w') as archivo:
                         # Escribe los datos en el archivo
                         archivo.write(soy)
 
@@ -775,7 +947,7 @@ def reporteFILE(path, buscar,contador,path_rep):
 
 
 """================================== PRUEBAS ================================== """
-# path = r"/home/rol/Tareas/PR1/MIA_PR1/Discos/disco.dsk"
+# path = r"BackEnd\Discos\DiscoPrueba.dsk"
 # bloqueFinal = leerBloquesFinal(path)
 # print(bloqueFinal)
 
@@ -787,9 +959,9 @@ def reporteFILE(path, buscar,contador,path_rep):
 
 # imprimirInodes(path)
 
-""""""
+# """"""
 # contendio = ""
-# with open("MAINS/backs/endinodo.txt","r") as archivo:
+# with open("BackEnd/backs/endinodo.txt","r") as archivo:
 #     contendio = archivo.read()
    
 # cont = 0
@@ -797,6 +969,7 @@ def reporteFILE(path, buscar,contador,path_rep):
 #     imprimirBloques(path, cont)
 #     cont += 64+64
 
+""""""
 
 # lista = ["archivo.txt"]
 # contador = 0

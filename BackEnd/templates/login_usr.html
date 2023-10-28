@@ -123,7 +123,7 @@
     <!-- <h1>Subir y Detectar Archivos</h1> -->
 
     <h1>Subir archivo</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
+    <form action="/upload_usr" method="post" enctype="multipart/form-data">
         <label for="file-input">Selecciona o arrastra un archivo aquí:</label><br>
         <input type="file" id="file-input" name="file" accept=".txt, .pdf, .adsj, .mia" />
         <br><br>
@@ -140,7 +140,7 @@
     <!-- <input type="text" id="text-input1" class="large-text-input" value="{{ initial_text }}"><br><br> -->
     
     <!-- <textarea id="miTextarea" rows="5" cols="40">{{ initial_text }}</textarea> -->
-    <form action="/ejecutar_comandos" method="post" enctype="multipart/form-data">
+    <form action="/ejecutar_comandos_usr" method="post" enctype="multipart/form-data">
         <textarea type="text" id="text-input1" name="text-input1" class="large-text-input">{{ initial_text }}</textarea><br><br>
         <input type="submit" value="Ejecutar Comandos" class="button primary-button">
         <h2>Salida en Consola</h2>

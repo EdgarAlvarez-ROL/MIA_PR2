@@ -942,7 +942,7 @@ def p_comando_cat(p):
     #     print("No se encontraron coincidencias en el texto.")
 
     contendio = ""
-    with open("MAINS/backs/endinodo.txt","r") as archivo:
+    with open("BackEnd/backs/endinodo.txt","r") as archivo:
         contendio = archivo.read()
 
     # lista = ["puta.txt","a.txt","archivo3.txt","soy.txt"]
@@ -1105,7 +1105,8 @@ def p_atributoSolo_RENAME(p):
 # MKDIR
 def p_comando_mkdir(p):
     """comando : MKDIR lista_mkdir"""
-    global user, sesion_Iniciada
+    global permiso_Usuario, user, sesion_Iniciada, bandera_mkfile, pp, block_start, path_del_disco, first, uid, gid
+    
 
     path_mkdir = ""
     r_mkdir = False
@@ -1119,10 +1120,16 @@ def p_comando_mkdir(p):
     if user != "":
         if path_mkdir != "":
             if sesion_Iniciada:
-                print(f"Comando EDIT")
+                print(f"Comando MKDIR")
                 print(f"Path {path_mkdir}")
                 print(f"R: {r_mkdir}")
-                adminCarpetas.mkdir(path_mkdir,r_mkdir)
+                permisos = "664"
+                text_r = f"""Comando MKDIR
+Path {path_mkdir}
+R: {r_mkdir}\n"""
+                salida_consola(text_r)
+                # adminCarpetas.mkdir(path_mkdir,r_mkdir)
+                admingCA.mkdir(path_del_disco, path_mkdir,first,permisos,uid,gid)
             else:
                 print("Porfavor INICIE SESION como ROOT para ejecutar este comando")
         else:
@@ -1246,9 +1253,11 @@ def p_comando_rep(p):
                 print(f"ID: {id_rep}")
                 print(f"NAME: {name_rep}")
 
-                if path_rep[1:3] != "tmp":
-                    path_del_disco = r"/tmp/"+str(id_rep[3:])+".dsk" 
+                # if path_rep[1:3] != "tmp":
+                #     path_del_disco = r"/tmp/"+str(id_rep[3:])+".dsk" 
 
+                
+                # print(path_del_disco)
                 lts_p_reportes = ["mbr","disk","inode","journaling","block","bm_inode","bm_block","tree","sb","file","ls"]
                 repo = reporte()
                 repo.path = path_del_disco
@@ -1259,7 +1268,7 @@ def p_comando_rep(p):
                     repo.repMBR()
                 elif name_rep.lower() == "disk":
                     print("")
-                    print("CReando Reporte DISK")
+                    print("Creando Reporte DISK")
 
                     total_size = -1
                     size_part1 = -1
@@ -1295,6 +1304,7 @@ def p_comando_rep(p):
                     graficas.rep_Journaling()
                     print("")
                 elif name_rep.lower() == "block":
+                    print("Ejecutando Reporte de BLOCK")
                     contendio = ""
                     with open("BackEnd/backs/endinodo.txt","r") as archivo:
                         contendio = archivo.read()
@@ -1309,13 +1319,13 @@ def p_comando_rep(p):
                     print("")
                 elif name_rep.lower() == "bm_inode":
                     contendio = ""
-                    with open("MAINS/Reportes/b_inode.txt","r") as archivo:
+                    with open("BackEnd/Reportes/b_inode.txt","r") as archivo:
                         contendio = archivo.read()
                         print(contendio)
                     print("")
                 elif name_rep.lower() == "bm_block":
                     contendio = ""
-                    with open("MAINS/Reportes/b_block.txt","r") as archivo:
+                    with open("BackEnd/Reportes/b_block.txt","r") as archivo:
                         contendio = archivo.read()
                         print(contendio)
                     print("")
@@ -1330,7 +1340,7 @@ def p_comando_rep(p):
                     print(f"RUTA: {ruta_rep}")
                     name_ruta = os.path.basename(ruta_rep)
                     contendio = ""
-                    with open("MAINS/backs/endinodo.txt","r") as archivo:
+                    with open("BackEnd/backs/endinodo.txt","r") as archivo:
                         contendio = archivo.read()
                     
                     lista = [name_ruta]

@@ -59,7 +59,7 @@ def logout():
 @app.route('/upload', methods=['POST'])
 def upload():
     uploaded_file = request.files['file']
-    
+   
 
     if uploaded_file.filename != '':
         file_content = uploaded_file.read()
@@ -83,6 +83,36 @@ def upload():
     else:
         return 'No se ha seleccionado ningún archivo.'
     
+
+
+@app.route('/upload_usr', methods=['POST'])
+def upload_usr():
+    uploaded_file = request.files['file']
+   
+
+    if uploaded_file.filename != '':
+        file_content = uploaded_file.read()
+        contenido_ejecutar = file_content.decode().replace('\n', '')
+
+
+        try:
+            with open("BackEnd\contenidoTXT\contenido_ejecutar.txt","w") as archivo:
+                archivo.write(contenido_ejecutar)
+                print(f"contenido de {uploaded_file.filename} escrito en contenido_ejecutar")
+        except Exception as e: 
+            print(str(e))
+
+
+        # Procesa el contenido del archivo aquí
+        print(f'Contenido del archivo:\n{file_content.decode()}')
+        # return f'Archivo subido: {uploaded_file.filename}<br>Contenido:<br><pre>{file_content.decode()}</pre> <button><a href="/" target="_blank">Ir a otra página</a></button>'
+        # initial_text = file_content.decode().replace('\n', '<br>').replace(' ', '&nbsp;')
+        # initial_text = f'<pre>{file_content.decode()}</pre>'
+        return render_template(f'login_usr.html', initial_text=file_content.decode())
+    else:
+        return 'No se ha seleccionado ningún archivo.'
+
+
 
 
 @app.route('/ejecutar_comandos', methods=['POST'])
@@ -118,26 +148,41 @@ def ejecutar_comandos():
         return 'No se han ingresado comando a ejecutar'
 
 
-    
-    
-    # rr = ""
-    
-    # try:
-    #         with open("BackEnd\contenidoTXT\contenido_ejecutar.txt","r") as archivo:
-    #             rr = archivo.read()
-    #             # print(f"contenido de {uploaded_file.filename} escrito en contenido_ejecutar")
-    #         print(rr)
-    #         main.main_grammar(rr)
-    # except Exception as e: 
-    #     print(str(e))
+@app.route('/ejecutar_comandos_usr', methods=['POST'])
+def ejecutar_comandos_usr():
+    texto_input1 = request.form['text-input1']
+    salida = ""
+    texto_input1 = texto_input1.replace("\r","")
+    lista_instrucciones = texto_input1.split("\n")
+    print(lista_instrucciones)
+
+    print('Texto ingresado a ejecutar:', texto_input1)
+
+    texto = ""
+    try:
+        with open("BackEnd\contenidoTXT\salida_consola.txt","w") as archivo:
+                archivo.write(texto)
+    except Exception as e: 
+        print(str(e))
         
-    # # instancia = 
-    # # main.main_grammar("execute -path=BackEnd\contenidoTXT\contenido_ejecutar.txt")
-    # return render_template('cliente.html')
+    if texto_input1 != "":
+        try:
+            for instruccion in lista_instrucciones:
+                main.main_grammar(instruccion)
+          
+            with open("BackEnd\contenidoTXT\salida_consola.txt","r") as archivo:
+                salida = archivo.read()
+    
+        except Exception as e: 
+            print(str(e))
+
+        return render_template(f'login_usr.html', salida_consola=salida, initial_text=texto_input1)
+    else:
+        return 'No se han ingresado comando a ejecutar'
+
 
     
-
-
+    
 
 
 if __name__ == '__main__':
