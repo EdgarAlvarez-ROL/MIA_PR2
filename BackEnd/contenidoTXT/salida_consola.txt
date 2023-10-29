@@ -1,0 +1,1 @@
+Error de sintaxis: LexToken(IGUAL,'=',1,30)Error de sintaxis: LexToken(IGUAL,'=',1,30)

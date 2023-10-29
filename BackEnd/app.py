@@ -181,7 +181,11 @@ def ejecutar_comandos_usr():
         return 'No se han ingresado comando a ejecutar'
 
 
-    
+
+
+@app.route('/ver_reportes', methods=['POST'])
+def ver_reportes():
+    return render_template('mostrar_reportes.html')
     
 
 

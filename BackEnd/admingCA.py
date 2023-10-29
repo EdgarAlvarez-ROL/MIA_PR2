@@ -716,7 +716,7 @@ def imprimirBloques(path, contador):
 
             
             print(f"Name: {name} | Inodo: {entero}")
-            
+            salida_consola(f"Name: {name} | Inodo: {entero}")
             
             # if entero != -1:
             #     ultimo_b_inodo = entero
@@ -932,9 +932,14 @@ def reporteFILE(path, buscar,contador,path_rep):
                         archivo.write(soy)
 
                     print("Archivo creado y datos escritos con éxito.")
+
+                    text_rc = f"Archivo creado y datos escritos con éxito.\nDatos del archivo {buscar}: {soy}"
+                    salida_consola(text_rc)
+                
+                
                 except Exception as e:
                     print(f"Error al crear y escribir en el archivo: {e}")
-
+                    salida_consola(f"Error al crear y escribir en el archivo: {e}")
 
                 
 

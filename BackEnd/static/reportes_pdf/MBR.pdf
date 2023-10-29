@@ -7,15 +7,15 @@ digraph MBR {
                     </TR>
                     <TR>
                         <TD>mbr_tamaño:</TD>
-                        <TD>12582912</TD>
+                        <TD>10485760</TD>
                     </TR>
                     <TR>
                         <TD>mbr_fecha_creacion:</TD>
-                        <TD>2023-09-23 18:25:56</TD>
+                        <TD>2023-10-25 23:21:52</TD>
                     </TR>
                     <TR>
                         <TD>mbr_disk_signature:</TD>
-                        <TD>1947</TD>
+                        <TD>1409</TD>
                     </TR>
                     
                     <TR>
@@ -40,11 +40,11 @@ digraph MBR {
                     </TR>
                     <TR>
                         <TD>part_size</TD>
-                        <TD>4194304</TD>
+                        <TD>2097152</TD>
                     </TR>
                      <TR>
                         <TD>part_name</TD>
-                        <TD>cosa</TD>
+                        <TD>hola</TD>
                     </TR>
 
         
@@ -96,7 +96,7 @@ digraph MBR {
                     </TR>
                     <TR>
                         <TD>part_start</TD>
-                        <TD>21092675</TD>
+                        <TD>21092686</TD>
                     </TR>
                     <TR>
                         <TD>part_size</TD>

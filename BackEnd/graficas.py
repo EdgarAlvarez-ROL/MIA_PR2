@@ -2,7 +2,7 @@
 import graphviz
 
 def rep_MBR(table_content):
-    s = graphviz.Digraph('MBR', filename='BackEnd\static\reportes_pdf\MBR.pdf',
+    s = graphviz.Digraph('MBR', filename=r'BackEnd\static\reportes_pdf\MBR.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
