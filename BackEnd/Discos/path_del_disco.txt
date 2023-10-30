@@ -1,1 +1,1 @@
-BackEnd\Discos\DiscoPrueba.dsk
+BackEnd\Discos\d3.dsk

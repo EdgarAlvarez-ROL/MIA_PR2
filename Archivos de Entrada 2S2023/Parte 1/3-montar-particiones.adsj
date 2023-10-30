@@ -1,0 +1,19 @@
+#MOUNT
+mount -path=/tmp/d1.dsk -name=Part1
+########reporte disk del estado inicial de las particiones
+rep -id=441d1 -path=/home/parte1/particiones/d1.jpg -name=disk 
+mkfs -type=full -id=441d1
+
+#MOUNT
+mount -path=/tmp/d3.dsk -name=Part1
+########reporte disk del estado inicial de las particiones
+rep -id=441d3 -path=/home/parte1/particiones/d3.jpg -name=disk 
+
+
+#MOUNT
+#mount -path=/tmp/d2.dsk -name=Part1
+
+# No existe particion llamada Part1
+#mkfs -type=full -id=443d2
+########reporte disk del estado inicial de las particiones
+#rep -id=441d2 -path=/home/parte1/particiones/d2.jpg -name=disk 

@@ -69,13 +69,13 @@ def upload():
         try:
             with open("BackEnd\contenidoTXT\contenido_ejecutar.txt","w") as archivo:
                 archivo.write(contenido_ejecutar)
-                print(f"contenido de {uploaded_file.filename} escrito en contenido_ejecutar")
+                # print(f"contenido de {uploaded_file.filename} escrito en contenido_ejecutar")
         except Exception as e: 
             print(str(e))
 
 
         # Procesa el contenido del archivo aquí
-        print(f'Contenido del archivo:\n{file_content.decode()}')
+        # print(f'Contenido del archivo:\n{file_content.decode()}')
         # return f'Archivo subido: {uploaded_file.filename}<br>Contenido:<br><pre>{file_content.decode()}</pre> <button><a href="/" target="_blank">Ir a otra página</a></button>'
         # initial_text = file_content.decode().replace('\n', '<br>').replace(' ', '&nbsp;')
         # initial_text = f'<pre>{file_content.decode()}</pre>'
@@ -98,13 +98,13 @@ def upload_usr():
         try:
             with open("BackEnd\contenidoTXT\contenido_ejecutar.txt","w") as archivo:
                 archivo.write(contenido_ejecutar)
-                print(f"contenido de {uploaded_file.filename} escrito en contenido_ejecutar")
+                #print(f"contenido de {uploaded_file.filename} escrito en contenido_ejecutar")
         except Exception as e: 
             print(str(e))
 
 
         # Procesa el contenido del archivo aquí
-        print(f'Contenido del archivo:\n{file_content.decode()}')
+        #print(f'Contenido del archivo:\n{file_content.decode()}')
         # return f'Archivo subido: {uploaded_file.filename}<br>Contenido:<br><pre>{file_content.decode()}</pre> <button><a href="/" target="_blank">Ir a otra página</a></button>'
         # initial_text = file_content.decode().replace('\n', '<br>').replace(' ', '&nbsp;')
         # initial_text = f'<pre>{file_content.decode()}</pre>'
@@ -121,9 +121,9 @@ def ejecutar_comandos():
     salida = ""
     texto_input1 = texto_input1.replace("\r","")
     lista_instrucciones = texto_input1.split("\n")
-    print(lista_instrucciones)
+    #print(lista_instrucciones)
 
-    print('Texto ingresado a ejecutar:', texto_input1)
+    #print('Texto ingresado a ejecutar:', texto_input1)
 
     texto = ""
     try:

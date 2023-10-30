@@ -532,6 +532,8 @@ Name: {name_mount} \n"""
     with open(r"BackEnd\Discos\path_del_disco.txt","w") as xde:
         xde.write(path_del_disco)
 
+        
+
 def p_atributos_mount(p):
     '''atributos_mount : atributos_mount atributo_mm
                  | atributo_mm'''
@@ -1265,10 +1267,12 @@ def p_comando_rep(p):
                 if (name_rep).lower() == "mbr":
                     print("")
                     print("Creando Reporte MBR")
+                    salida_consola("Creando Reporte MBR")
                     repo.repMBR()
                 elif name_rep.lower() == "disk":
                     print("")
                     print("Creando Reporte DISK")
+                    salida_consola("Creando Reporte DISK")
 
                     total_size = -1
                     size_part1 = -1
@@ -1289,7 +1293,7 @@ def p_comando_rep(p):
                         elif _ == 3:
                             size_part4 = size
 
-                    print(f"MBR tamaño: {total_size}")
+                    print(f"DISK tamaño: {total_size}")
                     print(f"PART1 : {size_part1}")
                     print(f"PART2 : {size_part2}")
                     print(f"PART3 : {size_part3}")
@@ -1318,11 +1322,29 @@ def p_comando_rep(p):
                     graficas.rep_BLOQUES(dot)
                     print("")
                 elif name_rep.lower() == "bm_inode":
+                    # contendio = ""
+                    # with open("BackEnd/Reportes/b_inode.txt","r") as archivo:
+                    #     contendio = archivo.read()
+                    #     print(contendio)
+                    # print("")
+                    print("Ejecutando Reporte de BM_INODE")
                     contendio = ""
-                    with open("BackEnd/Reportes/b_inode.txt","r") as archivo:
+                    with open("BackEnd/backs/endinodo.txt","r") as archivo:
                         contendio = archivo.read()
-                        print(contendio)
+                    
+                    cont = 0
+                    dot = """node [shape=record];
+                    struct3 [label=\" """
+                    
+                    for _ in range(int(contendio)):
+                        dot += repo.rep_bm_inode(cont)
+                        # dot += """&#92;n"""
+                        cont += 64+64
+                    dot += """\"];"""
+                    graficas.rep_BM_INODES_1(dot)
                     print("")
+
+
                 elif name_rep.lower() == "bm_block":
                     contendio = ""
                     with open("BackEnd/Reportes/b_block.txt","r") as archivo:

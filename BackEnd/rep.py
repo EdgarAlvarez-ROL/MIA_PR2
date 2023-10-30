@@ -886,22 +886,27 @@ class reporte:
 
                 
                 print(f"Name: {name} | Inodo: {entero}")
+                
 
-                if "." in name:
-                    name = "punto"
+                # if "." in name:
+                #     name = "punto"
+
+                name2 = name[:-4]
 
                 dot += f"""
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
-                        <td>{name}</td>
+                        <td>{name2}</td>
                     </tr>
                     <tr>
                         <td>Inodo</td>
                         <td>{entero}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
                     </tr>
                     """
                 
@@ -913,6 +918,94 @@ class reporte:
 
              
                
+            
+            # Este código asume que los datos se organizan en registros alternados de 12 bytes para la cadena y 4 bytes para el entero, 
+            # lo que corresponde al formato especificado en formato. Puedes ajustar el formato y el procesamiento según la estructura 
+            # real de tus datos. Asegúrate de manejar los casos en los que no haya suficientes bytes para un registro 
+            # completo o cuando la lectura llegue al final del bytearray.
+            
+            # imprimirBloques(path)
+        # dot += """</TABLE>>"""
+        # print(dot)
+        # graficas.rep_BLOQUES(dot)
+        return dot
+    
+
+    def rep_bm_inode(self, contador):
+        dot = """"""
+        mbr_format = "<iiiiB"
+        mbr_size = struct.calcsize(mbr_format)
+        # partition_format = "c2s3i3i16s"
+        partition_format = "c2s3i3i16s"
+        partition_size = struct.calcsize(partition_format)
+        data = ""
+        with open(self.path, "rb+") as file:
+            mbr_data = file.read(mbr_size)
+            particion_data = file.read(partition_size)
+            
+            """Block Start"""
+            superBloque_data = file.read(struct.calcsize("<iiiiiddiiiiiiiiii"))
+            superBloque_data = b'\x02\x00\x00\x00)7' + superBloque_data 
+            superBloque_data = superBloque_data[:-6]
+            # print(superBloque_data)F
+            data = struct.unpack("<iiiiiddiiiiiiiiii", superBloque_data)
+            # block_start = data[16]
+            # print(block_start)
+            bloques_carpetas = structs.BloquesCarpetas()
+            bytes_carpetas= bytes(bloques_carpetas)  # Obtener los bytes de la instancia
+            recuperado = bytearray(len(bytes_carpetas))  # Crear un bytearray del mismo tamaño
+
+            # recuperado += recuperado
+
+            block_start = data[16]
+            block_start += contador
+            file.seek(block_start)
+            file.readinto(recuperado)
+            # print(recuperado)
+
+            data_hex = bytearray(recuperado)
+            # Convierte los datos hexadecimales en una lista de bytes
+            byte_list = list(data_hex)
+
+            # Imprime la lista de bytes
+            # print(byte_list)
+
+            # Define el formato esperado, que incluye una cadena (12s) y un entero (i)
+            formato = "12s i"
+
+            # Calcula el tamaño del struct en bytes para leer una vez a la vez
+            tamanio_struct = struct.calcsize(formato)
+
+            posicion = 0
+
+            while posicion < len(data_hex):
+                parte = data_hex[posicion:posicion + tamanio_struct]
+                # print(tamanio_struct)
+                # print(len(parte))
+                if len(parte) < tamanio_struct:
+                    break  # Si no quedan suficientes bytes para un registro completo, sal del bucle
+                resultado = struct.unpack(formato, parte)
+                cadena, entero = resultado
+                # print(entero)
+                # Crear un nuevo bytearray excluyendo los bytes \xFF
+                filtered_byte_array = bytearray(byte for byte in cadena if byte != 0xFF)
+
+                # print(filtered_byte_array)
+                name = filtered_byte_array.decode('utf-8').rstrip("\0")
+
+                
+                # print(f"Name: {name} | Inodo: {entero}")
+                
+
+                if entero >= 0:
+                    dot += """1"""
+                else:
+                    dot += """0"""
+                
+                
+                # if entero != -1:
+                #     ultimo_b_inodo = entero
+                posicion += tamanio_struct
             
             # Este código asume que los datos se organizan en registros alternados de 12 bytes para la cadena y 4 bytes para el entero, 
             # lo que corresponde al formato especificado en formato. Puedes ajustar el formato y el procesamiento según la estructura 

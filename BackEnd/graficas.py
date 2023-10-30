@@ -13,7 +13,7 @@ def rep_MBR(table_content):
 
 
 def rep_FDISK(total, part1, part2, part3, part4):
-    s = graphviz.Digraph('DISK', filename='BackEnd\static\reportes_pdf\DISK.pdf',
+    s = graphviz.Digraph('DISK', filename=r'BackEnd\static\reportes_pdf\DISK.pdf',
                      node_attr={'shape': 'plaintext'})
     if part4 > total:
         part4 = 0
@@ -37,7 +37,7 @@ def rep_FDISK(total, part1, part2, part3, part4):
 
 
 def rep_SB(dot): 
-    s = graphviz.Digraph('SB', filename='BackEnd\static\reportes_pdf\SB.pdf',
+    s = graphviz.Digraph('SB', filename=r'BackEnd\static\reportes_pdf\SB.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
@@ -47,7 +47,7 @@ def rep_SB(dot):
 
 
 def rep_INODES(dot):
-    s = graphviz.Digraph('INODES', filename='BackEnd\static\reportes_pdf\INODES.pdf',
+    s = graphviz.Digraph('INODES', filename=r'BackEnd\static\reportes_pdf\INODES.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
@@ -58,7 +58,7 @@ def rep_INODES(dot):
 
 
 def rep_BLOQUES(dot):
-    s = graphviz.Digraph('BLOCKS', filename='BackEnd\static\reportes_pdf\BLOCKS.pdf',
+    s = graphviz.Digraph('BLOCKS', filename=r'BackEnd\static\reportes_pdf\BLOCKS.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
@@ -67,8 +67,19 @@ def rep_BLOQUES(dot):
     s.view() 
 
 
+def rep_BM_INODES_1(dot):
+    s = graphviz.Digraph('BM_INODES', filename=r'BackEnd\static\reportes_pdf\BM_INODES.pdf',
+                     node_attr={'shape': 'plaintext'})
+
+    # print(table_content)
+
+    s.node('struct5', dot)
+    s.view() 
+
+
+
 def rep_Journaling():
-    s = graphviz.Digraph('JS', filename='BackEnd\static\reportes_pdf\Journaling.pdf',
+    s = graphviz.Digraph('JS', filename=r'BackEnd\static\reportes_pdf\Journaling.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
@@ -89,7 +100,7 @@ def rep_Journaling():
 
 
 def rep_LS():
-    s = graphviz.Digraph('LS', filename='BackEnd\static\reportes_pdf\LS.pdf',
+    s = graphviz.Digraph('LS', filename=r'BackEnd\static\reportes_pdf\LS.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
@@ -122,7 +133,7 @@ def rep_LS():
 
 
 def rep_Tree():
-    s = graphviz.Digraph('TREE', filename='BackEnd\static\reportes_pdf\TREE.pdf',
+    s = graphviz.Digraph('TREE', filename=r'BackEnd\static\reportes_pdf\TREE.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)

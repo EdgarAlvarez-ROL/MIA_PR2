@@ -933,7 +933,7 @@ def reporteFILE(path, buscar,contador,path_rep):
 
                     print("Archivo creado y datos escritos con éxito.")
 
-                    text_rc = f"Archivo creado y datos escritos con éxito.\nDatos del archivo {buscar}: {soy}"
+                    text_rc = f"Archivo Encontrado.\nDatos del archivo {buscar}: {soy}"
                     salida_consola(text_rc)
                 
                 
