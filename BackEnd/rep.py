@@ -94,8 +94,8 @@ class reporte:
         formato = "%Y-%m-%d %H:%M:%S"  # Puedes ajustar el formato como desees
         fecha_formateada = fecha_y_hora.strftime(formato)
         dot += f'''  <TR>
-                        <TD>REPORTE MBR</TD>
-                        <TD>    </TD>
+                        <TD colspan="2">REPORTE MBR</TD>
+                        
                     </TR>
                     <TR>
                         <TD>mbr_tamaño:</TD>
@@ -118,6 +118,9 @@ class reporte:
         print("\tMBR Particion Start: ", partition1.part_start)
         print("\tMBR Particion SIze: ", partition1.part_size)
         print("\tMBR Particion Name: ", partition1.part_name)
+        
+        #if partition1.part_name[0].isdigit():
+ #           partition1.part_name = ""
 
         dot += f'''
                     <TR>
@@ -144,7 +147,7 @@ class reporte:
                         <TD>part_size</TD>
                         <TD>{partition1.part_size}</TD>
                     </TR>
-                     <TR>
+                    <TR>
                         <TD>part_name</TD>
                         <TD>{partition1.part_name}</TD>
                     </TR>
@@ -219,7 +222,8 @@ class reporte:
         print("\tMBR Particion Start: ", partition1.part_start)
         print("\tMBR Particion SIze: ", partition1.part_size)
         print("\tMBR Particion Name: ", partition1.part_name)
-
+        #if partition1.part_name[0].isdigit():
+ #           partition1.part_name = ""
         dot += f'''
                     <TR>
                         <TD>PARTICION</TD>
@@ -247,7 +251,7 @@ class reporte:
                     </TR>
                      <TR>
                         <TD>part_name</TD>
-                        <TD>{partition1.part_name}</TD>
+                        <TD>{str(partition1.part_name)}</TD>
                     </TR>
 
         '''
@@ -306,7 +310,8 @@ class reporte:
         print("\tMBR Particion Start: ", partition1.part_start)
         print("\tMBR Particion SIze: ", partition1.part_size)
         print("\tMBR Particion Name: ", partition1.part_name)
-
+        #if partition1.part_name[0].isdigit():
+ #           partition1.part_name = ""
         dot += f'''
                     <TR>
                         <TD>PARTICION</TD>
@@ -334,7 +339,7 @@ class reporte:
                     </TR>
                      <TR>
                         <TD>part_name</TD>
-                        <TD>{partition1.part_name}</TD>
+                        <TD>{str(partition1.part_name)}</TD>
                     </TR>
 
         '''

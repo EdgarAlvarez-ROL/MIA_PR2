@@ -7,7 +7,7 @@ mkfs -type=full -id=441d1
 #MOUNT
 mount -path=/tmp/d3.dsk -name=Part1
 ########reporte disk del estado inicial de las particiones
-rep -id=441d3 -path=/home/parte1/particiones/d3.jpg -name=disk 
+#rep -id=441d3 -path=/home/parte1/particiones/d3.jpg -name=disk 
 
 
 #MOUNT

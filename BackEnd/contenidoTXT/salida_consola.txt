@@ -1,25 +1,7 @@
 
-Comando: Mount
-Path: /tmp/d1.dsk
-Name: Part1 
-Mount se ha realizado correctamente el mount del -id=441d1 
+Comando: UnMount
+ID: 441d1 
+UNMOUNT se ha realizado correctamente el unmoun del -id=441d1 
 
 <-------------------------- LISTADO DE MOUNTS -------------------------->
-d1> 871 : d1, Part1
-Creando Reporte DISK
-Comando: MKFS
-ID: 441d1
-Type: Full
-Fs: 2FS
-MKFS: Se ha formateado la partición: Part1 con formato EXT2 con éxito
 
-Comando: Mount
-Path: /tmp/d3.dsk
-Name: Part1 
-'utf-8' codec can't decode byte 0xff in position 13: invalid start byte
-No se puede montar una particicon extendida
-Mount no se puede montar una partición extendida 
-
-<-------------------------- LISTADO DE MOUNTS -------------------------->
-d1> 871 : d1, Part1
-Creando Reporte DISK

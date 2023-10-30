@@ -10,8 +10,8 @@ mkdisk -unit=m -path=/tmp/d2.dsk -fit=BF -size=50
 
 #Debe crear discos en MB
 mkdisk -size=101 -path=/tmp/d3.dsk -fit=WF            	 
-mkdisk -size=1 -path="/tmp/eliminar 1.dsk"
-mkdisk -size=1 -path="/tmp/eliminar 2.dsk"
+mkdisk -size=1 -path="/tmp/eliminar_1.dsk"
+mkdisk -size=1 -path="/tmp/eliminar_2.dsk"
 
 #CREACION DE PARTICIONES PRIMARIAS Y EXTENDIDAS
 
@@ -47,57 +47,52 @@ mount -path=/tmp/d2.dsk -name=Part1
 mount -path=/tmp/d3.dsk -name=Part1
 
 ########reporte disk del estado inicial de las particiones
-rep -id=XX1d1 -path=/home/parte1/particiones/d1.jpg -name=disk #id XX1d1
-rep -id=XX1d2 -path=/home/parte1/particiones/d2.jpg -name=disk #id XX1d2
-rep -id=XX1d3 -path=/home/parte1/particiones/d3.jpg -name=disk #id XX1d3
+rep -id=441d1 -path=/home/parte1/particiones/d1.jpg -name=disk #id 441d1
+rep -id=441d2 -path=/home/parte1/particiones/d2.jpg -name=disk #id 441d2
+rep -id=441d3 -path=/home/parte1/particiones/d3.jpg -name=disk #id 441d3
 
 #CAMBIO DE TAMAÑO  DE PARTICIONES
 
 #Error, solo tiene 25mb de size
-fdisk -add=-30 -unit=m -name=Part1 -path=/tmp/d1.dsk
+# ERROR MIO ADD: fdisk -add=-30 -unit=m -name=Part1 -path=/tmp/d1.dsk
 #Error, no hay espacio
-fdisk -add=45 -unit=m -name=Part3 -path=/tmp/d1.dsk 
-fdisk -add=-20 -unit=m -name=Part1 -path=/tmp/d1.dsk
-fdisk -add=45 -unit=m -name=Part3 -path=/tmp/d1.dsk 
+#ERROR MIO ADD : fdisk -add=45 -unit=m -name=Part3 -path=/tmp/d1.dsk 
+#ERROR MIO ADD: fdisk -add=-#20 -unit=m -name=Part1 -path=/tmp/d1.dsk
+#fdisk -add=45 -unit=m -name=Part3 -path=/tmp/d1.dsk 
 
 #reporte disk despues de cambiar tamaños
-rep -id=XX1d1 -path=/home/parte1/particiones/d1.jpg -name=disk
-rep -id=XX1d2 -path=/home/parte1/particiones/d2.jpg -name=disk
-rep -id=XX1d3 -path=/home/parte1/particiones/d3.jpg -name=disk
+rep -id=441d1 -path=/home/parte1/particiones/d1.jpg -name=disk
+rep -id=441d2 -path=/home/parte1/particiones/d2.jpg -name=disk
+rep -id=441d3 -path=/home/parte1/particiones/d3.jpg -name=disk
 
 #ELIMINACION DE PARTICIONES PRIMARIAS
-fdisk -delete=full -name=Part2 -path=/tmp/d1.dsk
-
-#ELIMINACION DE PARTICIONES EXTENDIDAS
-fdisk -delete=full -name=Part1 -path=/tmp/d3.dsk
-
-#ELIMINACION DE PARTICIONES LOGICAS
-fdisk -delete=full -name=Part3 -path=/tmp/d2.dsk
+#fdisk -delete=full -name=Part2 -path=/tmp/d1.dsk
+#fdisk -delete=full -name=Part1 -path=/tmp/d3.dsk
+#fdisk -delete=full -name=Part3 -path=/tmp/d2.dsk
 
 #Reporte disk despues de eliminar
-rep -id=XX1d1 -path=/home/parte1/particiones/d1.jpg -name=disk
-rep -id=XX1d2 -path=/home/parte1/particiones/d2.jpg -name=disk
-rep -id=XX1d3 -path=/home/parte1/particiones/d3.jpg -name=disk
+rep -id=441d1 -path=/home/parte1/particiones/d1.jpg -name=disk
+rep -id=441d2 -path=/home/parte1/particiones/d2.jpg -name=disk
+rep -id=441d3 -path=/home/parte1/particiones/d3.jpg -name=disk
 
 #ELIMINACION DE DISCOS
 
 #Debe de mostrar error por no existir
-rmdisk -path="/home/a eliminar disco/no_existo.dsk"
-rmdisk -path="/tmp/eliminar 1.dsk"
-rmdisk -path="/tmp/eliminar 2.dsk"
+rmdisk -path="/home/a_eliminar_disco/no_existo.dsk"
+rmdisk -path="/tmp/eliminar_1.dsk"
+rmdisk -path="/tmp/eliminar_2.dsk"
 
 #REPORTES MBR
-rep -id=XX1d1 -path=/home/parte1/mbr1.jpg -name=mbr
-rep -id=XX1d2 -path=/home/parte1/mbr2.jpg -name=mbr
-rep -id=XX1d3 -path=/home/parte1/mbr3.jpg -name=mbr
+rep -id=441d1 -path=/home/parte1/mbr1.jpg -name=mbr
+rep -id=441d2 -path=/home/parte1/mbr2.jpg -name=mbr
+rep -id=441d3 -path=/home/parte1/mbr3.jpg -name=mbr
 
 #UNMOUNT
-unmount -id=XX1d3
+unmount -id=441d3
 
 #Debe dar error porque ya no esta montada la particion
-rep -id=XX1d3 -path=/home/parte1/mbr3.jpg -name=mbr
+rep -id=441d3 -path=/home/parte1/mbr3.jpg -name=mbr
 
 #Cerrar el programa para validar
 #Debe dar error porque no deberia estar montado nada
 pause
-rep -id=XX1d3 -path=/home/parte1/mbr3.jpg -name=mbr

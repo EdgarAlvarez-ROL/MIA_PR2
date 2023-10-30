@@ -1,14 +1,20 @@
 
 import graphviz
+import re
 
 def rep_MBR(table_content):
     s = graphviz.Digraph('MBR', filename=r'BackEnd\static\reportes_pdf\MBR.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
-
-    s.node('struct1', table_content)
-    s.view()
+    table_content = table_content.replace("►","")
+    
+    try:
+        s.node('struct1', table_content)
+        s.view()
+    except Exception as e:
+        print(e)
+    
     # print(s)
 
 

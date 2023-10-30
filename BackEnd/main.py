@@ -308,12 +308,12 @@ def p_comando_mkdisk(p):
     print("Unit: "+str(unit))
     print("Fit: "+str(fit))
     print("Path: "+str(path))
-    texto = f"""Comando. MKDISK
+    texto = f"""\nComando. MKDISK
 Size: {str(size)}
 Unit: {str(unit)}
 Fit: {str(fit)}
 Path: {str(path)}
-"""
+\n"""
     salida_consola(texto)
     
     path_del_disco = path
@@ -405,7 +405,7 @@ def p_comando_fdisk(p):
         print(f"Add: {add}")
         print("Delete: "+delete)
         text_sali = f"""
-Comando: FDISK
+\nComando: FDISK
 Size: {str(size)}
 Unit: {unit_fkdisk}
 Path: {path}
@@ -487,7 +487,7 @@ def p_comando_rmdisk(p):
         path = path[1:-1]
 
     print(f"Ruta del archivo a eliminar: {path}\n")
-    salida_consola(f"Ruta del archivo a eliminar: {path}")
+    salida_consola(f"Ruta del archivo a eliminar: {path} \n")
     nombre_archivo = os.path.basename(path)
     ruta_PR2 = r"BackEnd\Discos" + "\\" + nombre_archivo
     rm = RmDisk()
@@ -606,7 +606,7 @@ Fs: 2FS\n"""
 
     else: 
         print("El comando MKFS requiere obligatoriamente de un id")
-        salida_consola("El comando MKFS requiere obligatoriamente de un id")
+        salida_consola("\n El comando MKFS requiere obligatoriamente de un id \n")
         # mkfs -id="parte 1" -type=P -fs=2fs
 
 
@@ -702,7 +702,7 @@ def p_comando_mkgrp(p):
     if user == "root" or user == "ROOT":
         if sesion_Iniciada:
             print("Comando: MKGRP usuario ROOT")
-            salida_consola("Comando: MKGRP usuario ROOT\n")
+            salida_consola("\nComando: MKGRP usuario ROOT\n")
             admin.mkgrp(path_del_disco, name)
             admin.leerDATA(path_del_disco)
         else:
@@ -719,7 +719,7 @@ def p_comando_rmgrp(p):
     if user == "root" or user == "ROOT":
         if sesion_Iniciada:
             print("Comando: RMGRP usuario ROOT")
-            salida_consola("Comando: RMGRP usuario ROOT")
+            salida_consola("\nComando: RMGRP usuario ROOT\n")
             admin.rmgrp(path_del_disco,name)
             admin.leerDATA(path_del_disco)
         else:
@@ -748,7 +748,7 @@ def p_comando_mkusr(p):
         if sesion_Iniciada:
             print("Comando: MKUSR usuario ROOT")
             # adminUG.mkusr(name_ingresar,pass_ingresar,grp)
-            salida_consola("Comando: MKUSR usuario ROOT\n")
+            salida_consola("\nComando: MKUSR usuario ROOT\n")
             admin.mkusr(path_del_disco,name_ingresar,pass_ingresar,grp)
             admin.leerDATA(path_del_disco)
         else:
@@ -786,7 +786,7 @@ def p_comando_rmusr(p):
     if user == "root" or user == "ROOT":
         if sesion_Iniciada:
             print("Comando: RMUSR usuario ROOT")
-            salida_consola("Comando: RMUSR usuario ROOT\n")
+            salida_consola("\nComando: RMUSR usuario ROOT\n")
             admin.rmusr(path_del_disco,name_ingresar)
             admin.leerDATA(path_del_disco)
         else:
@@ -1126,7 +1126,7 @@ def p_comando_mkdir(p):
                 print(f"Path {path_mkdir}")
                 print(f"R: {r_mkdir}")
                 permisos = "664"
-                text_r = f"""Comando MKDIR
+                text_r = f"""\nComando MKDIR
 Path {path_mkdir}
 R: {r_mkdir}\n"""
                 salida_consola(text_r)
@@ -1255,6 +1255,8 @@ def p_comando_rep(p):
                 print(f"ID: {id_rep}")
                 print(f"NAME: {name_rep}")
 
+                path_del_disco =  r"BackEnd\Discos" + "\\" + id_rep[3:] + ".dsk"
+
                 # if path_rep[1:3] != "tmp":
                 #     path_del_disco = r"/tmp/"+str(id_rep[3:])+".dsk" 
 
@@ -1267,12 +1269,12 @@ def p_comando_rep(p):
                 if (name_rep).lower() == "mbr":
                     print("")
                     print("Creando Reporte MBR")
-                    salida_consola("Creando Reporte MBR")
+                    salida_consola("Creando Reporte MBR\n")
                     repo.repMBR()
                 elif name_rep.lower() == "disk":
                     print("")
                     print("Creando Reporte DISK")
-                    salida_consola("Creando Reporte DISK")
+                    salida_consola("Creando Reporte DISK\n")
 
                     total_size = -1
                     size_part1 = -1
@@ -1417,7 +1419,7 @@ def p_error(p):
         pass
     else:
         print(f"Error de sintaxis: {p}")
-        salida_consola(f"Error de sintaxis: {p}")
+        salida_consola(f"Error de sintaxis: {p} \n")
         
 
 # Construcción del analizador sintáctico
