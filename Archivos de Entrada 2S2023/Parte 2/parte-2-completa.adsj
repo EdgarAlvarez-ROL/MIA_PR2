@@ -6,72 +6,71 @@
 mkdisk -size=112 -unit=M -path=/home/parte2/disco.dsk
 
 fdisk -type=P -unit=M -name=Part1 -size=25 -path=/home/parte2/disco.dsk
-fdisk -type=P -unit=M -name=Part2 -size=25 -path=/home/parte2/disco.dsk
-fdisk -type=P -unit=M -name=Part3 -size=25 -path=/home/parte2/disco.dsk
-fdisk -type=P -unit=M -name=Part4 -size=25 -path=/home/parte2/disco.dsk
 
-mount -path=/home/parte2/disco.dsk -name=Part1 #id XX1disco
-mount -path=/home/parte2/disco.dsk -name=Part2 #id XX2disco
-mount -path=/home/parte2/disco.dsk -name=Part3 #id XX3disco
-mount -path=/home/parte2/disco.dsk -name=Part4 #id XX4disco
 
-#MKFS A PARTICIONES
-mkfs -type=full -id=XX1disco
-mkfs -type=full -id=XX2disco -fs=3fs
+# Cambio es que puse los mkfs debajo de cada mount para que se ejecute despues de cada uno
+
+#MOUNT Y MKFS A PARTICIONES
+mount -path=/home/parte2/disco.dsk -name=Part1 #id 441disco
+mkfs -type=full -id=441disco
+
 
 #REPORTES INICIALES
-rep -id=XX1disco -path="/home/parte2/inicial/ext2_sb_1.pdf" -name=sb
-rep -id=XX1disco -path="/home/parte2/inicial/ext2_tree_1.pdf" -name=tree
+rep -id=441disco -path="/home/parte2/inicial/ext2_sb_1.pdf" -name=sb
+#rep -id=441disco -path="/home/parte2/inicial/ext2_tree_1.pdf" -name=tree
 
-rep -id=XX2disco -path="/home/parte2/inicial/ext3_sb_1.pdf" -name=sb
-rep -id=XX2disco -path="/home/parte2/inicial/ext3_tree_1.pdf" -name=tree
+rep -id=442disco -path="/home/parte2/inicial/ext3_sb_1.pdf" -name=sb
+#rep -id=442disco -path="/home/parte2/inicial/ext3_tree_1.pdf" -name=tree
 
 #INICIO DE SESION
 
 #Debe dar error porque no existe el usuario roca
-Login -pass=567 -user=roca -id=XX1disco
+#Login -pass=567 -user=roca -id=XX1disco
 #Debe dar error porque no existe nada activo
-logout
+#logout
 
-Login -pass=123 -user=root -id=XX1disco
+#Login -pass=123 -user=root -id=441disco
 
 pause
 
+
+# // DEBIDO A QUE EL BLOQUE DE ARCHIVOS ES DE 64 BYTES
+# NO ES POSIBLE LEER MAS ALLA DE DICHOS 64 BYTES
 #CREACION DE GRUPOS
 mkgrp -name=Archivos
-mkgrp -name=Arqui
-mkgrp -name="Orga"
+#mkgrp -name=Arqui
+#mkgrp -name="Orga"
 mkgrp -name="Compi 2"
 
 #Validar cambios en el archivo
-Cat -file1=/users.txt
+#Cat -file1=/users.txt
 
 #ELIMINACION DE GRUPOS
 rmgrp -name=Arqui
 
 #Validar cambios en el archivo
-Cat -file1=/users.txt
+#Cat -file1=/users.txt
 
 #CREACION DE USUARIOS
-Mkusr -user="user1" -grp=root -pass=user1
-Mkusr -user="user2" -grp="Compi 2" -pass=user2
-Mkusr -user="user3" -grp="Compi 2" -pass=user3
-Mkusr -user="user4" -grp="Compi 2" -pass=user4
+mkusr -user="user1" -grp=root -pass="user1"
+mkusr -user="user2" -grp="Compi 2" -pass="user1"
+#mkusr -user="user3" -grp="Compi 2" -pass="user3"
+#mkusr -user="user4" -grp="Compi 2" -pass="user4"
 
 #Validar cambios en el archivo
-Cat -file1=/users.txt
+#Cat -file1=/users.txt
 
 #ELIMINACION DE USUARIOS
-rmusr -user=user3
+rmusr -user="user1"
 
 #Validar cambios en el archivo
-Cat -file1=/users.txt
+#Cat -file1=/users.txt
 
 #CAMBIAR USUARIO DE GRUPO
-chgrp -user=user4 -grp=Archivos
+#chgrp -user=user4 -grp=Archivos
 
 #Validar cambios en el archivo
-Cat -file1=/users.txt
+#Cat -file1=/users.txt
 
 pause
 

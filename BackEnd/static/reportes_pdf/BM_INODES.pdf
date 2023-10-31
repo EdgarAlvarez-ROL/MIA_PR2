@@ -1,0 +1,5 @@
+digraph BM_INODES {
+	node [shape=plaintext]
+	struct5 [label="node [shape=record];
+                    struct3 [label=\" 111000000000000000000000000000000000000000000000 \"]; "]
+}

@@ -2,47 +2,7 @@ digraph BLOCKS {
 	node [shape=plaintext]
 	struct5 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"> 
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
-                    </tr>
-                    <tr>
-                        <td>NAME</td>
-                        <td>punto</td>
-                    </tr>
-                    <tr>
-                        <td>Inodo</td>
-                        <td>0</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
-                    </tr>
-                    <tr>
-                        <td>NAME</td>
-                        <td>punto</td>
-                    </tr>
-                    <tr>
-                        <td>Inodo</td>
-                        <td>0</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
-                    </tr>
-                    <tr>
-                        <td>NAME</td>
-                        <td>punto</td>
-                    </tr>
-                    <tr>
-                        <td>Inodo</td>
-                        <td>1</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -50,25 +10,29 @@ digraph BLOCKS {
                     </tr>
                     <tr>
                         <td>Inodo</td>
-                        <td>-1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
                     </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
-                        <td>home</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Inodo</td>
-                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
                     </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -76,77 +40,14 @@ digraph BLOCKS {
                     </tr>
                     <tr>
                         <td>Inodo</td>
-                        <td>2</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
                     </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
-                    </tr>
-                    <tr>
-                        <td>NAME</td>
-                        <td>docs</td>
-                    </tr>
-                    <tr>
-                        <td>Inodo</td>
-                        <td>3</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
-                    </tr>
-                    <tr>
-                        <td>NAME</td>
-                        <td>punto</td>
-                    </tr>
-                    <tr>
-                        <td>Inodo</td>
-                        <td>5</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
-                    </tr>
-                    <tr>
-                        <td>NAME</td>
-                        <td>home</td>
-                    </tr>
-                    <tr>
-                        <td>Inodo</td>
-                        <td>5</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
-                    </tr>
-                    <tr>
-                        <td>NAME</td>
-                        <td>sol</td>
-                    </tr>
-                    <tr>
-                        <td>Inodo</td>
-                        <td>6</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
-                    </tr>
-                    <tr>
-                        <td>NAME</td>
-                        <td>coco</td>
-                    </tr>
-                    <tr>
-                        <td>Inodo</td>
-                        <td>8</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -156,62 +57,27 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
-                        <td>home</td>
+                        <td>om</td>
                     </tr>
                     <tr>
                         <td>Inodo</td>
-                        <td>8</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
                     </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
-                    </tr>
-                    <tr>
-                        <td>NAME</td>
-                        <td>user</td>
-                    </tr>
-                    <tr>
-                        <td>Inodo</td>
-                        <td>9</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
-                    </tr>
-                    <tr>
-                        <td>NAME</td>
-                        <td>docs</td>
-                    </tr>
-                    <tr>
-                        <td>Inodo</td>
-                        <td>10</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
-                    </tr>
-                    <tr>
-                        <td>NAME</td>
-                        <td>punto</td>
-                    </tr>
-                    <tr>
-                        <td>Inodo</td>
-                        <td>12</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -221,10 +87,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -234,10 +102,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -247,10 +117,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -260,10 +132,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -273,10 +147,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -286,10 +162,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -299,10 +177,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -312,10 +192,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -325,10 +207,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -338,10 +222,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -351,10 +237,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -364,10 +252,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -377,10 +267,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -390,10 +282,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -403,10 +297,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -416,10 +312,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -429,10 +327,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -442,10 +342,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -455,10 +357,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -468,10 +372,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -481,10 +387,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -494,10 +402,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -507,10 +417,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -520,10 +432,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -533,10 +447,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -546,10 +462,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -559,10 +477,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -572,10 +492,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -585,10 +507,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -598,10 +522,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -611,10 +537,12 @@ digraph BLOCKS {
                         <td>Inodo</td>
                         <td>-1</td>
                     </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
                     
                     <tr>
-                        <td>BLOCK</td>
-                        <td>     </td>
+                        <td colspan="2">BLOCK</td>
                     </tr>
                     <tr>
                         <td>NAME</td>
@@ -623,6 +551,174 @@ digraph BLOCKS {
                     <tr>
                         <td>Inodo</td>
                         <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">BLOCK</td>
+                    </tr>
+                    <tr>
+                        <td>NAME</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inodo</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">BLOCK</td>
+                    </tr>
+                    <tr>
+                        <td>NAME</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inodo</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">BLOCK</td>
+                    </tr>
+                    <tr>
+                        <td>NAME</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inodo</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">BLOCK</td>
+                    </tr>
+                    <tr>
+                        <td>NAME</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inodo</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">BLOCK</td>
+                    </tr>
+                    <tr>
+                        <td>NAME</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inodo</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">BLOCK</td>
+                    </tr>
+                    <tr>
+                        <td>NAME</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inodo</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">BLOCK</td>
+                    </tr>
+                    <tr>
+                        <td>NAME</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inodo</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">BLOCK</td>
+                    </tr>
+                    <tr>
+                        <td>NAME</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inodo</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">BLOCK</td>
+                    </tr>
+                    <tr>
+                        <td>NAME</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inodo</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">BLOCK</td>
+                    </tr>
+                    <tr>
+                        <td>NAME</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inodo</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">BLOCK</td>
+                    </tr>
+                    <tr>
+                        <td>NAME</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inodo</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> </td>
                     </tr>
                     </TABLE>>]
 }

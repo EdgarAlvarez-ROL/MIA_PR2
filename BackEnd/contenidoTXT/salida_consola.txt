@@ -1,7 +1,96 @@
 
-Comando: UnMount
-ID: 441d1 
-UNMOUNT se ha realizado correctamente el unmoun del -id=441d1 
+Comando. MKDISK
+Size: 112
+Unit: M
+Fit: ff
+Path: /home/parte2/disco.dsk
+
+	ERROR: Disco ya existente en la ruta: BackEnd\Discos\disco.dsk
+
+
+Comando: FDISK
+Size: 25
+Unit: M
+Path: /home/parte2/disco.dsk
+Name: Part1
+Type: P
+Fit: ff
+Add: 0
+Delete: 
+'utf-8' codec can't decode byte 0xc7 in position 7: invalid continuation byteFDISK - El nombre: Part1 ya existe en el disco
+
+Comando: Mount
+Path: /home/parte2/disco.dsk
+Name: Part1 
+'utf-8' codec can't decode byte 0xc7 in position 7: invalid continuation byte
+Mount se ha realizado correctamente el mound del -id=441disco 
 
 <-------------------------- LISTADO DE MOUNTS -------------------------->
+disco> 871 : disco, Part1disco> 871 : disco, Part1disco> 871 : disco, Part1
 
+Comando: MKFS
+ID: 441disco
+Type: Full
+Fs: 2FS
+Error reading and unpacking MBR data from the disk file: 'utf-8' codec can't decode byte 0xc7 in position 6: invalid continuation byte 
+MKFS: ERROR Error reading and unpacking MBR data from the disk file: 'utf-8' codec can't decode byte 0xc7 in position 6: invalid continuation byte 
+
+PAUSE ...
+
+Comando: MKGRP usuario ROOT
+El Grupo Ingresado: - Archivos - ya Existe
+
+=========Administracion Usuarios y Grupos=========
+1,G,root
+1,U,root,root,123
+2,G,Archivos
+3,G,Compi 2
+1,U,root,use
+==================
+
+Comando: MKGRP usuario ROOT
+El Grupo Ingresado: - Compi 2 - ya Existe
+
+=========Administracion Usuarios y Grupos=========
+1,G,root
+1,U,root,root,123
+2,G,Archivos
+3,G,Compi 2
+1,U,root,use
+==================
+
+Comando: RMGRP usuario ROOT
+Grupo Ingresado no Existente
+
+=========Administracion Usuarios y Grupos=========
+1,G,root
+1,U,root,root,123
+2,G,Archivos
+3,G,Compi 2
+1,U,root,use
+==================
+
+Comando: MKUSR usuario ROOT
+Usuario user1 registrado correctamente
+
+=========Administracion Usuarios y Grupos=========
+1,G,root
+1,U,root,root,123
+2,G,Archivos
+3,G,Compi 2
+1,U,root,use
+==================
+
+Comando: MKUSR usuario ROOT
+Usuario user2 registrado correctamente
+
+=========Administracion Usuarios y Grupos=========
+1,G,root
+1,U,root,root,123
+2,G,Archivos
+3,G,Compi 2
+1,U,root,use
+==================
+Error de sintaxis: LexToken(USER,'user',1,7) 
+
+PAUSE ...

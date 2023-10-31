@@ -1,0 +1,10 @@
+digraph TREE {
+	node [shape=plaintext]
+	struck1 [label="TABLA INODO /."]
+	struct6 [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"> 
+        <tr>
+            <td>TREE</td>
+        </tr>
+</TABLE>>]
+}

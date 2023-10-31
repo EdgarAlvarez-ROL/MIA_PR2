@@ -616,6 +616,7 @@ def leerDATA(path):
                 file.seek(block_start+64)
                 file.readinto(recuperado)
                 # print(recuperado)
+                # print(len(recuperado))
                 
                 """ARCHIVOS"""
                 data = struct.unpack("<64s", recuperado)

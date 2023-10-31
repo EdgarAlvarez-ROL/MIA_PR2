@@ -226,8 +226,8 @@ class reporte:
  #           partition1.part_name = ""
         dot += f'''
                     <TR>
-                        <TD>PARTICION</TD>
-                        <TD>    </TD>
+                        <TD colspan="2">PARTICION</TD>
+                        
                     </TR>
                     <TR>
                         <TD>part_status:</TD>
@@ -314,8 +314,7 @@ class reporte:
  #           partition1.part_name = ""
         dot += f'''
                     <TR>
-                        <TD>PARTICION</TD>
-                        <TD>    </TD>
+                        <TD colspan="2">PARTICION</TD>
                     </TR>
                     <TR>
                         <TD>part_status:</TD>
@@ -588,19 +587,32 @@ class reporte:
         print("\tSB s_inodes_count:", (data[1]))
         print("\tSB s_block_count:", data[2])
         print("\tSB s_free_blocks_count:", data[3])
-        print("\tSB s_free_inodes:count:", data[4])
+        print("\tSB s_free_inodes_count:", data[4])
         timestamp = data[5] #  Suponiendo que tienes una marca de tiempo en `timestamp`
-        fecha_y_hora = datetime.datetime.utcfromtimestamp(timestamp)
-        # Formatear la fecha y hora según tus preferencias
-        formato = "%Y-%m-%d %H:%M:%S"  # Puedes ajustar el formato como desees
-        fecha_formateada1 = fecha_y_hora.strftime(formato)
+        # print(timestamp/1000000000)
+        fecha_formateada1 = 0
+        if timestamp > 9999999:
+            timestamp = 0
+        try:
+            fecha_y_hora = datetime.datetime.utcfromtimestamp(timestamp)
+            # Formatear la fecha y hora según tus preferencias
+            formato = "%Y-%m-%d %H:%M:%S"  # Puedes ajustar el formato como desees
+            fecha_formateada1 = fecha_y_hora.strftime(formato)
+        except Exception as e:
+            print(e)
+        
         print("\tSB s_mtime:", fecha_formateada1)
 
+
         timestamp = data[6] #  Suponiendo que tienes una marca de tiempo en `timestamp`
-        fecha_y_hora = datetime.datetime.utcfromtimestamp(timestamp)
-        # Formatear la fecha y hora según tus preferencias
-        formato = "%Y-%m-%d %H:%M:%S"  # Puedes ajustar el formato como desees
-        fecha_formateada2 = fecha_y_hora.strftime(formato)
+        try:
+            fecha_y_hora = datetime.datetime.utcfromtimestamp(timestamp)
+            # Formatear la fecha y hora según tus preferencias
+            formato = "%Y-%m-%d %H:%M:%S"  # Puedes ajustar el formato como desees
+            fecha_formateada2 = fecha_y_hora.strftime(formato)
+        except Exception as e:
+            print(e)
+        
         print("\tSB s_umtime:", fecha_formateada2)
         print("\tSB s_mnt_count:", data[7])
         print("\tSB s_magic:", data[8])
@@ -617,8 +629,7 @@ class reporte:
         dot = f"""<
         <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"> 
                 <tr>
-                    <td>SUPERBLOQUE</td>
-                    <td>    </td>
+                    <td colspan="2">SUPERBLOQUE</td>
                 </tr>
                 <tr>
                     <td>s_filesystem_type</td>
@@ -765,8 +776,8 @@ class reporte:
 
                 dot += f"""
                 <tr>
-                    <td>INODES</td>
-                    <td> </td>
+                    <td colspan="2">INODES</td>
+                    
                 </tr>
                 <tr>
                     <td>i_uid</td>

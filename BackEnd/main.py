@@ -30,7 +30,6 @@ tokens = (
     'IGUAL',
     'GUION',
     'DIR',
-    'LETRA_FDISK',
     'REP',
     'RMDISK',
     'FIT',
@@ -84,7 +83,6 @@ reserved = {
     'igual' : 'IGUAL',
     'guion' : 'GUION',
     'dir' : 'DIR',
-    'letra_fdisk' : 'LETRA_FDISK',
     'rep' : 'REP',
     'rmdisk' : 'RMDISK',
     'fit' : 'FIT',
@@ -156,7 +154,7 @@ t_ID = r'id'
 t_ADD = r'add'
 t_GUION = r'-'
 t_LETRA_MKDISK = r'[MK]'
-t_LETRA_FDISK = r'[BKMEPL]'
+# t_LETRA_FDISK = r'[BKMEPL]'
 t_FIT = r'fit'
 t_LETRAS_FIT = r'wf|bf|ff'
 t_IGUAL = r'='
@@ -1336,13 +1334,13 @@ def p_comando_rep(p):
                     
                     cont = 0
                     dot = """node [shape=record];
-                    struct3 [label=\" """
+                    struct3 [label=" """
                     
                     for _ in range(int(contendio)):
                         dot += repo.rep_bm_inode(cont)
                         # dot += """&#92;n"""
                         cont += 64+64
-                    dot += """\"];"""
+                    dot += """ "]; """
                     graficas.rep_BM_INODES_1(dot)
                     print("")
 
