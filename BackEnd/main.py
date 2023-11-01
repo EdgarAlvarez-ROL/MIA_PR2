@@ -259,8 +259,8 @@ mount = Mount()
 path_mount = ""
 name_mount = ""
 
-path_del_disco = r"BackEnd\Discos\path_del_disco.txt"
-with open(r"BackEnd\Discos\path_del_disco.txt","r") as xde:
+path_del_disco = r"BackEnd/Discos/path_del_disco.txt"
+with open(r"BackEnd/Discos/path_del_disco.txt","r") as xde:
     path_del_disco = xde.read()
 
 
@@ -316,7 +316,7 @@ Path: {str(path)}
     
     path_del_disco = path
     nombre_archivo = os.path.basename(path)
-    ruta_PR2 = r"BackEnd\Discos" + "\\" + nombre_archivo
+    ruta_PR2 = r"BackEnd/Discos" + "/" + nombre_archivo
     # creacion del disco con los valores ingresados
     disk = MkDisk()
     disk.path = ruta_PR2
@@ -326,7 +326,7 @@ Path: {str(path)}
     disk.create()
 
 
-    with open(r"BackEnd\Discos\path_del_disco.txt","w") as xde:
+    with open(r"BackEnd/Discos/path_del_disco.txt","w") as xde:
         xde.write(path)
     # reseteo de las variables para su uso futuro
     size = ""
@@ -415,7 +415,7 @@ Delete: {delete}\n"""
         salida_consola(text_sali)
 
         nombre_archivo = os.path.basename(path)
-        ruta_PR2 = r"BackEnd\Discos" + "\\" + nombre_archivo
+        ruta_PR2 = r"BackEnd/Discos" + "/" + nombre_archivo
 
 
         if type.lower() == "e":
@@ -487,7 +487,7 @@ def p_comando_rmdisk(p):
     print(f"Ruta del archivo a eliminar: {path}\n")
     salida_consola(f"Ruta del archivo a eliminar: {path} \n")
     nombre_archivo = os.path.basename(path)
-    ruta_PR2 = r"BackEnd\Discos" + "\\" + nombre_archivo
+    ruta_PR2 = r"BackEnd/Discos" + "/" + nombre_archivo
     rm = RmDisk()
     rm.path = ruta_PR2
     rm.remove()
@@ -520,14 +520,14 @@ Name: {name_mount} \n"""
         salida_consola(texto_rp)
 
         nombre_archivo = os.path.basename(path_mount)
-        ruta_PR2 = r"BackEnd\Discos" + "\\" + nombre_archivo
+        ruta_PR2 = r"BackEnd/Discos" + "/" + nombre_archivo
 
         mount.mount(ruta_PR2, name_mount)
         mount.listaMount()
 
         # mount -path=/home/rol/Tareas/PR1/MIA_PR1/Discos/disco2.dsk -name=hola
     path_del_disco = ruta_PR2
-    with open(r"BackEnd\Discos\path_del_disco.txt","w") as xde:
+    with open(r"BackEnd/Discos/path_del_disco.txt","w") as xde:
         xde.write(path_del_disco)
 
         
@@ -835,7 +835,7 @@ R: {r}\n"""
             
             salida_consola(texto_r2)
             # nombre_archivo = os.path.basename(path_mount)
-            # ruta_PR2 = r"BackEnd\Discos" + "\\" + nombre_archivo
+            # ruta_PR2 = r"BackEnd/Discos" + "\\" + nombre_archivo
 
 
             if size_mkfile == "":
@@ -1254,7 +1254,7 @@ def p_comando_rep(p):
                 print(f"ID: {id_rep}")
                 print(f"NAME: {name_rep}")
 
-                path_del_disco =  r"BackEnd\Discos" + "\\" + id_rep[3:] + ".dsk"
+                path_del_disco =  r"BackEnd/Discos" + "\\" + id_rep[3:] + ".dsk"
 
                 # if path_rep[1:3] != "tmp":
                 #     path_del_disco = r"/tmp/"+str(id_rep[3:])+".dsk" 

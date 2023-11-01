@@ -5,7 +5,7 @@ Unit: M
 Fit: ff
 Path: /home/parte2/disco.dsk
 
-	ERROR: Disco ya existente en la ruta: BackEnd\Discos\disco.dsk
+	ERROR: Disco ya existente en la ruta: BackEnd/Discos/disco.dsk
 
 
 Comando: FDISK
@@ -26,7 +26,7 @@ Name: Part1
 Mount se ha realizado correctamente el mound del -id=441disco 
 
 <-------------------------- LISTADO DE MOUNTS -------------------------->
-disco> 871 : disco, Part1disco> 871 : disco, Part1
+disco> 871 : disco, Part1disco> 871 : disco, Part1disco> 871 : disco, Part1
 
 Comando: MKFS
 ID: 441disco
@@ -34,29 +34,28 @@ Type: Full
 Fs: 2FS
 Error reading and unpacking MBR data from the disk file: 'utf-8' codec can't decode byte 0xc7 in position 6: invalid continuation byte 
 MKFS: ERROR Error reading and unpacking MBR data from the disk file: 'utf-8' codec can't decode byte 0xc7 in position 6: invalid continuation byte 
+Creando Reporte SUPER BLOQUE
+Creando Reporte SUPER BLOQUE
 
 PAUSE ...
 
 Comando: MKGRP usuario ROOT
-El Grupo Ingresado: - Arqui - ya Existe
+Grupo Arqui registrado correctamente
 
 =========Administracion Usuarios y Grupos=========
 1,G,root
 1,U,root,root,123
-0,G,Arqui
-3,G,Compi 2
-1,U,root,user1,
+2,G,Arqui
 ==================
 
 Comando: MKGRP usuario ROOT
-El Grupo Ingresado: - Compi 2 - ya Existe
+Grupo Compi 2 registrado correctamente
 
 =========Administracion Usuarios y Grupos=========
 1,G,root
 1,U,root,root,123
-0,G,Arqui
+2,G,Arqui
 3,G,Compi 2
-1,U,root,user1,
 ==================
 
 Comando: RMGRP usuario ROOT
@@ -67,11 +66,10 @@ Grupo Arqui Eliminado correctamente
 1,U,root,root,123
 0,G,Arqui
 3,G,Compi 2
-1,U,root,user1,
 ==================
 
 Comando: MKUSR usuario ROOT
-El Usuario Ingresado: - user1 - ya Existe
+Usuario user1 registrado correctamente
 
 =========Administracion Usuarios y Grupos=========
 1,G,root
@@ -983,6 +981,7 @@ fase2
 b50
 
 PAUSE ...
+Creando Reporte SUPER BLOQUE
 
 Comando MKFILE: usuario root
 Path: /home/b1.txt
@@ -1002,12 +1001,18 @@ R: False
 Ejecutando...
 home
 b1_1.txt
+Creando Reporte SUPER BLOQUE
 
 PAUSE ...
 
 PAUSE ...
 
 PAUSE ...
+Creando Reporte FILE
+Creando Reporte SUPER BLOQUE
+Creando Reporte BLOCK
+Creando Reporte BM_INODE
+Creando Reporte BM_BLOCK
 
 PAUSE ...
 
