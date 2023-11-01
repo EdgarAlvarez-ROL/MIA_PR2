@@ -906,8 +906,11 @@ class reporte:
 
                 # if "." in name:
                 #     name = "punto"
-
-                name2 = name[:-4]
+                name2 = ""
+                if name.count(".") > 0:
+                    name2 = name[:-4]
+                else:
+                    name2 = name
 
                 dot += f"""
                     <tr>

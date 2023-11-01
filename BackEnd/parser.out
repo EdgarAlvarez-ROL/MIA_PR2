@@ -58,7 +58,7 @@ Rule 42    atributos_mkusr -> atributosSolo_mkusr
 Rule 43    atributosSolo_mkusr -> GUION USER STRING
 Rule 44    atributosSolo_mkusr -> GUION PASS STRING
 Rule 45    atributosSolo_mkusr -> GUION GRP STRING
-Rule 46    comando -> RMUSR GUION NAME STRING
+Rule 46    comando -> RMUSR GUION USER STRING
 Rule 47    comando -> MKFILE atributos_mkfile
 Rule 48    atributos_mkfile -> atributos_mkfile atributosSolo_mkfile
 Rule 49    atributos_mkfile -> atributosSolo_mkfile
@@ -135,7 +135,7 @@ MKFS                 : 26
 MKGRP                : 38
 MKUSR                : 40
 MOUNT                : 20
-NAME                 : 14 24 38 39 46 69 86
+NAME                 : 14 24 38 39 69 86
 NUM                  : 
 PASS                 : 35 44
 PATH                 : 4 11 19 23 50 59 63 68 73 78 80 85
@@ -153,7 +153,7 @@ STRING               : 5 6 7 12 13 14 15 16 17 24 25 29 30 34 35 36 38 39 43 44 
 TYPE                 : 12 30
 UNIT                 : 6 13
 UNMOUNT              : 25
-USER                 : 34 43
+USER                 : 34 43 46
 error                : 
 
 Nonterminals, with rules where they appear
@@ -202,7 +202,7 @@ state 0
     (38) comando -> . MKGRP GUION NAME STRING
     (39) comando -> . RMGRP GUION NAME STRING
     (40) comando -> . MKUSR atributos_mkusr
-    (46) comando -> . RMUSR GUION NAME STRING
+    (46) comando -> . RMUSR GUION USER STRING
     (47) comando -> . MKFILE atributos_mkfile
     (54) comando -> . CAT listaFilesCAT
     (59) comando -> . REMOVE GUION PATH DIR
@@ -370,7 +370,7 @@ state 12
 
 state 13
 
-    (46) comando -> RMUSR . GUION NAME STRING
+    (46) comando -> RMUSR . GUION USER STRING
 
     GUION           shift and go to state 46
 
@@ -725,9 +725,9 @@ state 45
 
 state 46
 
-    (46) comando -> RMUSR GUION . NAME STRING
+    (46) comando -> RMUSR GUION . USER STRING
 
-    NAME            shift and go to state 102
+    USER            shift and go to state 102
 
 
 state 47
@@ -1192,7 +1192,7 @@ state 101
 
 state 102
 
-    (46) comando -> RMUSR GUION NAME . STRING
+    (46) comando -> RMUSR GUION USER . STRING
 
     STRING          shift and go to state 155
 
@@ -1593,9 +1593,9 @@ state 154
 
 state 155
 
-    (46) comando -> RMUSR GUION NAME STRING .
+    (46) comando -> RMUSR GUION USER STRING .
 
-    $end            reduce using rule 46 (comando -> RMUSR GUION NAME STRING .)
+    $end            reduce using rule 46 (comando -> RMUSR GUION USER STRING .)
 
 
 state 156

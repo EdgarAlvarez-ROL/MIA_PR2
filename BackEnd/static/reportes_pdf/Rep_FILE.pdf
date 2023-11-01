@@ -1,0 +1,8 @@
+digraph FILE {
+	node [shape=plaintext]
+	struct7 [label="1,G,root
+1,U,root,root,123
+0,G,Arqui
+3,G,Compi 2
+1,U,root,user1,"]
+}

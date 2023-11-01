@@ -26,7 +26,7 @@ Name: Part1
 Mount se ha realizado correctamente el mound del -id=441disco 
 
 <-------------------------- LISTADO DE MOUNTS -------------------------->
-disco> 871 : disco, Part1disco> 871 : disco, Part1disco> 871 : disco, Part1
+disco> 871 : disco, Part1disco> 871 : disco, Part1
 
 Comando: MKFS
 ID: 441disco
@@ -38,14 +38,14 @@ MKFS: ERROR Error reading and unpacking MBR data from the disk file: 'utf-8' cod
 PAUSE ...
 
 Comando: MKGRP usuario ROOT
-El Grupo Ingresado: - Archivos - ya Existe
+El Grupo Ingresado: - Arqui - ya Existe
 
 =========Administracion Usuarios y Grupos=========
 1,G,root
 1,U,root,root,123
-2,G,Archivos
+0,G,Arqui
 3,G,Compi 2
-1,U,root,use
+1,U,root,user1,
 ==================
 
 Comando: MKGRP usuario ROOT
@@ -54,31 +54,31 @@ El Grupo Ingresado: - Compi 2 - ya Existe
 =========Administracion Usuarios y Grupos=========
 1,G,root
 1,U,root,root,123
-2,G,Archivos
+0,G,Arqui
 3,G,Compi 2
-1,U,root,use
+1,U,root,user1,
 ==================
 
 Comando: RMGRP usuario ROOT
-Grupo Ingresado no Existente
+Grupo Arqui Eliminado correctamente
 
 =========Administracion Usuarios y Grupos=========
 1,G,root
 1,U,root,root,123
-2,G,Archivos
+0,G,Arqui
 3,G,Compi 2
-1,U,root,use
+1,U,root,user1,
 ==================
 
 Comando: MKUSR usuario ROOT
-Usuario user1 registrado correctamente
+El Usuario Ingresado: - user1 - ya Existe
 
 =========Administracion Usuarios y Grupos=========
 1,G,root
 1,U,root,root,123
-2,G,Archivos
+0,G,Arqui
 3,G,Compi 2
-1,U,root,use
+1,U,root,user1,
 ==================
 
 Comando: MKUSR usuario ROOT
@@ -87,10 +87,952 @@ Usuario user2 registrado correctamente
 =========Administracion Usuarios y Grupos=========
 1,G,root
 1,U,root,root,123
-2,G,Archivos
+0,G,Arqui
 3,G,Compi 2
-1,U,root,use
+1,U,root,user1,
 ==================
-Error de sintaxis: LexToken(USER,'user',1,7) 
+
+Comando: RMUSR usuario ROOT
+Usuario Ingresado no Existente
+
+=========Administracion Usuarios y Grupos=========
+1,G,root
+1,U,root,root,123
+0,G,Arqui
+3,G,Compi 2
+1,U,root,user1,
+==================
 
 PAUSE ...
+
+Comando MKDIR
+Path /home/mia/fase2
+R: True
+home
+mia
+fase2
+
+Comando MKDIR
+Path /home/mia/carpeta2
+R: True
+home
+mia
+carpeta2
+
+Comando MKDIR
+Path /home/mia/z
+R: True
+home
+mia
+z
+
+Comando MKDIR
+Path /home/mia/carpeta2/a1
+R: False
+home
+mia
+carpeta2
+a1
+
+Comando MKDIR
+Path /home/mia/carpeta2/a2
+R: False
+home
+mia
+carpeta2
+a2
+
+Comando MKDIR
+Path /home/mia/carpeta2/a3
+R: False
+home
+mia
+carpeta2
+a3
+
+Comando MKDIR
+Path /home/mia/carpeta2/a4
+R: False
+home
+mia
+carpeta2
+a4
+
+Comando MKDIR
+Path /home/mia/carpeta2/a5
+R: False
+home
+mia
+carpeta2
+a5
+
+Comando MKDIR
+Path /home/mia/carpeta2/a6
+R: False
+home
+mia
+carpeta2
+a6
+
+Comando MKDIR
+Path /home/mia/carpeta2/a7
+R: False
+home
+mia
+carpeta2
+a7
+
+Comando MKDIR
+Path /home/mia/carpeta2/a8
+R: False
+home
+mia
+carpeta2
+a8
+
+Comando MKDIR
+Path /home/mia/carpeta2/a9
+R: False
+home
+mia
+carpeta2
+a9
+
+Comando MKDIR
+Path /home/mia/carpeta2/a10
+R: False
+home
+mia
+carpeta2
+a10
+
+Comando MKDIR
+Path /home/mia/fase2/a1
+R: False
+home
+mia
+fase2
+a1
+
+Comando MKDIR
+Path /home/mia/fase2/a2
+R: False
+home
+mia
+fase2
+a2
+
+Comando MKDIR
+Path /home/mia/fase2/a3
+R: False
+home
+mia
+fase2
+a3
+
+Comando MKDIR
+Path /home/mia/fase2/a4
+R: False
+home
+mia
+fase2
+a4
+
+Comando MKDIR
+Path /home/mia/fase2/a5
+R: False
+home
+mia
+fase2
+a5
+
+Comando MKDIR
+Path /home/mia/fase2/a6
+R: False
+home
+mia
+fase2
+a6
+
+Comando MKDIR
+Path /home/mia/fase2/a7
+R: False
+home
+mia
+fase2
+a7
+
+Comando MKDIR
+Path /home/mia/fase2/a8
+R: False
+home
+mia
+fase2
+a8
+
+Comando MKDIR
+Path /home/mia/fase2/a9
+R: False
+home
+mia
+fase2
+a9
+
+Comando MKDIR
+Path /home/mia/fase2/a10
+R: False
+home
+mia
+fase2
+a10
+
+Comando MKDIR
+Path /home/mia/fase2/a11
+R: False
+home
+mia
+fase2
+a11
+
+Comando MKDIR
+Path /home/mia/fase2/a12
+R: False
+home
+mia
+fase2
+a12
+
+Comando MKDIR
+Path /home/mia/fase2/a13
+R: False
+home
+mia
+fase2
+a13
+
+Comando MKDIR
+Path /home/mia/fase2/a14
+R: False
+home
+mia
+fase2
+a14
+
+Comando MKDIR
+Path /home/mia/fase2/a15
+R: False
+home
+mia
+fase2
+a15
+
+Comando MKDIR
+Path /home/mia/fase2/a16
+R: False
+home
+mia
+fase2
+a16
+
+Comando MKDIR
+Path /home/mia/fase2/a17
+R: False
+home
+mia
+fase2
+a17
+
+Comando MKDIR
+Path /home/mia/fase2/a18
+R: False
+home
+mia
+fase2
+a18
+
+Comando MKDIR
+Path /home/mia/fase2/a19
+R: False
+home
+mia
+fase2
+a19
+
+Comando MKDIR
+Path /home/mia/fase2/a20
+R: False
+home
+mia
+fase2
+a20
+
+Comando MKDIR
+Path /home/mia/fase2/a21
+R: False
+home
+mia
+fase2
+a21
+
+Comando MKDIR
+Path /home/mia/fase2/a22
+R: False
+home
+mia
+fase2
+a22
+
+Comando MKDIR
+Path /home/mia/fase2/a23
+R: False
+home
+mia
+fase2
+a23
+
+Comando MKDIR
+Path /home/mia/fase2/a24
+R: False
+home
+mia
+fase2
+a24
+
+Comando MKDIR
+Path /home/mia/fase2/a25
+R: False
+home
+mia
+fase2
+a25
+
+Comando MKDIR
+Path /home/mia/fase2/a26
+R: False
+home
+mia
+fase2
+a26
+
+Comando MKDIR
+Path /home/mia/fase2/a27
+R: False
+home
+mia
+fase2
+a27
+
+Comando MKDIR
+Path /home/mia/fase2/a28
+R: False
+home
+mia
+fase2
+a28
+
+Comando MKDIR
+Path /home/mia/fase2/a29
+R: False
+home
+mia
+fase2
+a29
+
+Comando MKDIR
+Path /home/mia/fase2/a30
+R: False
+home
+mia
+fase2
+a30
+
+Comando MKDIR
+Path /home/mia/fase2/a31
+R: False
+home
+mia
+fase2
+a31
+
+Comando MKDIR
+Path /home/mia/fase2/a32
+R: False
+home
+mia
+fase2
+a32
+
+Comando MKDIR
+Path /home/mia/fase2/a33
+R: False
+home
+mia
+fase2
+a33
+
+Comando MKDIR
+Path /home/mia/fase2/a34
+R: False
+home
+mia
+fase2
+a34
+
+Comando MKDIR
+Path /home/mia/fase2/a35
+R: False
+home
+mia
+fase2
+a35
+
+Comando MKDIR
+Path /home/mia/fase2/a36
+R: False
+home
+mia
+fase2
+a36
+
+Comando MKDIR
+Path /home/mia/fase2/a37
+R: False
+home
+mia
+fase2
+a37
+
+Comando MKDIR
+Path /home/mia/fase2/a38
+R: False
+home
+mia
+fase2
+a38
+
+Comando MKDIR
+Path /home/mia/fase2/a39
+R: False
+home
+mia
+fase2
+a39
+
+Comando MKDIR
+Path /home/mia/fase2/a40
+R: False
+home
+mia
+fase2
+a40
+
+Comando MKDIR
+Path /home/mia/fase2/a41
+R: False
+home
+mia
+fase2
+a41
+
+Comando MKDIR
+Path /home/mia/fase2/a42
+R: False
+home
+mia
+fase2
+a42
+
+Comando MKDIR
+Path /home/mia/fase2/a43
+R: False
+home
+mia
+fase2
+a43
+
+Comando MKDIR
+Path /home/mia/fase2/a44
+R: False
+home
+mia
+fase2
+a44
+
+Comando MKDIR
+Path /home/mia/fase2/a45
+R: False
+home
+mia
+fase2
+a45
+
+Comando MKDIR
+Path /home/mia/fase2/a46
+R: False
+home
+mia
+fase2
+a46
+
+Comando MKDIR
+Path /home/archivos/fase2/a46
+R: False
+home
+archivos
+fase2
+a46
+
+Comando MKDIR
+Path /home/archivos/fase2/b1
+R: False
+home
+archivos
+fase2
+b1
+
+Comando MKDIR
+Path /home/archivos/fase2/b2
+R: False
+home
+archivos
+fase2
+b2
+
+Comando MKDIR
+Path /home/archivos/fase2/b3
+R: False
+home
+archivos
+fase2
+b3
+
+Comando MKDIR
+Path /home/archivos/fase2/b4
+R: False
+home
+archivos
+fase2
+b4
+
+Comando MKDIR
+Path /home/archivos/fase2/b5
+R: False
+home
+archivos
+fase2
+b5
+
+Comando MKDIR
+Path /home/archivos/fase2/b6
+R: False
+home
+archivos
+fase2
+b6
+
+Comando MKDIR
+Path /home/archivos/fase2/b7
+R: False
+home
+archivos
+fase2
+b7
+
+Comando MKDIR
+Path /home/archivos/fase2/b8
+R: False
+home
+archivos
+fase2
+b8
+
+Comando MKDIR
+Path /home/archivos/fase2/b9
+R: False
+home
+archivos
+fase2
+b9
+
+Comando MKDIR
+Path /home/archivos/fase2/b10
+R: False
+home
+archivos
+fase2
+b10
+
+Comando MKDIR
+Path /home/archivos/fase2/b11
+R: False
+home
+archivos
+fase2
+b11
+
+Comando MKDIR
+Path /home/archivos/fase2/b12
+R: False
+home
+archivos
+fase2
+b12
+
+Comando MKDIR
+Path /home/archivos/fase2/b13
+R: False
+home
+archivos
+fase2
+b13
+
+Comando MKDIR
+Path /home/archivos/fase2/b14
+R: False
+home
+archivos
+fase2
+b14
+
+Comando MKDIR
+Path /home/archivos/fase2/b15
+R: False
+home
+archivos
+fase2
+b15
+
+Comando MKDIR
+Path /home/archivos/fase2/b16
+R: False
+home
+archivos
+fase2
+b16
+
+Comando MKDIR
+Path /home/archivos/fase2/b17
+R: False
+home
+archivos
+fase2
+b17
+
+Comando MKDIR
+Path /home/archivos/fase2/b18
+R: False
+home
+archivos
+fase2
+b18
+
+Comando MKDIR
+Path /home/archivos/fase2/b19
+R: False
+home
+archivos
+fase2
+b19
+
+Comando MKDIR
+Path /home/archivos/fase2/b20
+R: False
+home
+archivos
+fase2
+b20
+
+Comando MKDIR
+Path /home/archivos/fase2/b21
+R: False
+home
+archivos
+fase2
+b21
+
+Comando MKDIR
+Path /home/archivos/fase2/b22
+R: False
+home
+archivos
+fase2
+b22
+
+Comando MKDIR
+Path /home/archivos/fase2/b23
+R: False
+home
+archivos
+fase2
+b23
+
+Comando MKDIR
+Path /home/archivos/fase2/b24
+R: False
+home
+archivos
+fase2
+b24
+
+Comando MKDIR
+Path /home/archivos/fase2/b25
+R: False
+home
+archivos
+fase2
+b25
+
+Comando MKDIR
+Path /home/archivos/fase2/b26
+R: False
+home
+archivos
+fase2
+b26
+
+Comando MKDIR
+Path /home/archivos/fase2/b27
+R: False
+home
+archivos
+fase2
+b27
+
+Comando MKDIR
+Path /home/archivos/fase2/b28
+R: False
+home
+archivos
+fase2
+b28
+
+Comando MKDIR
+Path /home/archivos/fase2/b29
+R: False
+home
+archivos
+fase2
+b29
+
+Comando MKDIR
+Path /home/archivos/fase2/b30
+R: False
+home
+archivos
+fase2
+b30
+
+Comando MKDIR
+Path /home/archivos/fase2/b31
+R: False
+home
+archivos
+fase2
+b31
+
+Comando MKDIR
+Path /home/archivos/fase2/b32
+R: False
+home
+archivos
+fase2
+b32
+
+Comando MKDIR
+Path /home/archivos/fase2/b33
+R: False
+home
+archivos
+fase2
+b33
+
+Comando MKDIR
+Path /home/archivos/fase2/b34
+R: False
+home
+archivos
+fase2
+b34
+
+Comando MKDIR
+Path /home/archivos/fase2/b35
+R: False
+home
+archivos
+fase2
+b35
+
+Comando MKDIR
+Path /home/archivos/fase2/b36
+R: False
+home
+archivos
+fase2
+b36
+
+Comando MKDIR
+Path /home/archivos/fase2/b37
+R: False
+home
+archivos
+fase2
+b37
+
+Comando MKDIR
+Path /home/archivos/fase2/b38
+R: False
+home
+archivos
+fase2
+b38
+
+Comando MKDIR
+Path /home/archivos/fase2/b39
+R: False
+home
+archivos
+fase2
+b39
+
+Comando MKDIR
+Path /home/archivos/fase2/b40
+R: False
+home
+archivos
+fase2
+b40
+
+Comando MKDIR
+Path /home/archivos/fase2/b41
+R: False
+home
+archivos
+fase2
+b41
+
+Comando MKDIR
+Path /home/archivos/fase2/b42
+R: False
+home
+archivos
+fase2
+b42
+
+Comando MKDIR
+Path /home/archivos/fase2/b43
+R: False
+home
+archivos
+fase2
+b43
+
+Comando MKDIR
+Path /home/archivos/fase2/b44
+R: False
+home
+archivos
+fase2
+b44
+
+Comando MKDIR
+Path /home/archivos/fase2/b45
+R: False
+home
+archivos
+fase2
+b45
+
+Comando MKDIR
+Path /home/archivos/fase2/b46
+R: False
+home
+archivos
+fase2
+b46
+
+Comando MKDIR
+Path /home/archivos/fase2/b47
+R: False
+home
+archivos
+fase2
+b47
+
+Comando MKDIR
+Path /home/archivos/fase2/b48
+R: False
+home
+archivos
+fase2
+b48
+
+Comando MKDIR
+Path /home/archivos/fase2/b49
+R: False
+home
+archivos
+fase2
+b49
+
+Comando MKDIR
+Path /home/archivos/fase2/b50
+R: False
+home
+archivos
+fase2
+b50
+
+PAUSE ...
+
+Comando MKFILE: usuario root
+Path: /home/b1.txt
+Size: 75
+Cont: 
+R: False
+Ejecutando...
+home
+b1.txt
+Error de sintaxis: LexToken(IGUAL,'=',1,33) 
+
+Comando MKFILE: usuario root
+Path: /home/b1_1.txt
+Size: 10000
+Cont: 
+R: False
+Ejecutando...
+home
+b1_1.txt
+
+PAUSE ...
+
+PAUSE ...
+
+PAUSE ...
+
+PAUSE ...
+
+PAUSE ...
+
+PAUSE ...
+
+PAUSE ...
+
+PAUSE ...
+
+Comando MKFILE: usuario root
+Path: /home/b2ble.txt
+Size: 180
+Cont: 
+R: False
+Ejecutando...
+home
+b2ble.txt
+
+Comando MKFILE: usuario root
+Path: /home/b3ple.txt
+Size: 2800
+Cont: 
+R: False
+Ejecutando...
+home
+b3ple.txt

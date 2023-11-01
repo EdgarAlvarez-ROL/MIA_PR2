@@ -11,7 +11,8 @@ def rep_MBR(table_content):
     
     try:
         s.node('struct1', table_content)
-        s.view()
+        # s.view()
+        s.render()
     except Exception as e:
         print(e)
     
@@ -39,7 +40,8 @@ def rep_FDISK(total, part1, part2, part3, part4):
 </TABLE>>"""
 
     s.node('struct2', table_content)
-    s.view()
+    # s.view()
+    s.render()
 
 
 def rep_SB(dot): 
@@ -49,7 +51,8 @@ def rep_SB(dot):
     # print(table_content)
 
     s.node('struct3', dot)
-    s.view() 
+    # s.view() 
+    s.render()
 
 
 def rep_INODES(dot):
@@ -59,7 +62,8 @@ def rep_INODES(dot):
     # print(table_content)
 
     s.node('struct4', dot)
-    s.view() 
+    # s.view() 
+    s.render()
 
 
 
@@ -70,17 +74,19 @@ def rep_BLOQUES(dot):
     # print(table_content)
 
     s.node('struct5', dot)
-    s.view() 
+    # s.view() 
+    s.render()
 
 
 def rep_BM_INODES_1(dot):
     s = graphviz.Digraph('BM_INODES', filename=r'BackEnd\static\reportes_pdf\BM_INODES.pdf',
-                     node_attr={'shape': 'plaintext'})
+                     node_attr={'shape': 'record'})
 
     # print(table_content)
 
     s.node('struct5', dot)
-    s.view() 
+    # s.view() 
+    s.render()
 
 
 
@@ -102,7 +108,8 @@ def rep_Journaling():
 </TABLE>>"""
 
     s.node('struct6', table_content)
-    s.view() 
+    # s.view() 
+    s.render()
 
 
 def rep_LS():
@@ -135,7 +142,8 @@ def rep_LS():
 </TABLE>>"""
 
     s.node('struct6', table_content)
-    s.view() 
+    # s.view() 
+    s.render()
 
 
 def rep_Tree():
@@ -153,4 +161,25 @@ def rep_Tree():
     s.node("struck1", "TABLA INODO /.")
 
     s.node('struct6', table_content)
-    s.view() 
+    # s.view() 
+    s.render()
+
+
+
+def rep_file():
+    s = graphviz.Digraph('FILE', filename=r'BackEnd\static\reportes_pdf\Rep_FILE.pdf',
+                     node_attr={'shape': 'plaintext'})
+    
+    dpt = ""
+    with open(r"BackEnd\static\reportes_pdf\file.txt", "r") as file:
+        dot = file.read()
+        print(dot)
+
+    s.node('struct7', dot)
+    # s.view()
+    s.render()
+    # print("REPORTE DE FILE LISTOOOOOOOOOO")
+
+
+
+# rep_file()

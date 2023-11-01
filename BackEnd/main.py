@@ -776,7 +776,7 @@ def p_atributoSolo_mkusr(p):
 
 
 def p_comando_rmusr(p):
-    '''comando : RMUSR GUION NAME STRING'''
+    '''comando : RMUSR GUION USER STRING'''
     global sesion_Iniciada, user, sesion_Iniciada, path_del_disco
     name_ingresar = p[4]
     
@@ -1073,7 +1073,7 @@ def p_comando_rename(p):
     if user != "":
         if path_rename != "" and name_rename != "":
             if sesion_Iniciada:
-                print(f"Comando EDIT")
+                print(f"Comando RENAME")
                 print(f"Path {path_rename}")
                 print(f"Name: {name_rename}")
                 adminCarpetas.rename(path_rename,name_rename)
@@ -1130,6 +1130,7 @@ R: {r_mkdir}\n"""
                 salida_consola(text_r)
                 # adminCarpetas.mkdir(path_mkdir,r_mkdir)
                 admingCA.mkdir(path_del_disco, path_mkdir,first,permisos,uid,gid)
+                first = False
             else:
                 print("Porfavor INICIE SESION como ROOT para ejecutar este comando")
         else:
@@ -1301,6 +1302,7 @@ def p_comando_rep(p):
                     graficas.rep_FDISK(total_size,size_part1,size_part2,size_part3,size_part4)
                     print("")
                 elif name_rep.lower() == "inode":
+                    salida_consola("Creando Reporte Inode\n")
                     repo.repInodes()
                     print("")
                 elif name_rep.lower() == "journaling":
@@ -1308,6 +1310,7 @@ def p_comando_rep(p):
                     graficas.rep_Journaling()
                     print("")
                 elif name_rep.lower() == "block":
+                    salida_consola("Creando Reporte BLOCK\n")
                     print("Ejecutando Reporte de BLOCK")
                     contendio = ""
                     with open("BackEnd/backs/endinodo.txt","r") as archivo:
@@ -1322,6 +1325,7 @@ def p_comando_rep(p):
                     graficas.rep_BLOQUES(dot)
                     print("")
                 elif name_rep.lower() == "bm_inode":
+                    salida_consola("Creando Reporte BM_INODE\n")
                     # contendio = ""
                     # with open("BackEnd/Reportes/b_inode.txt","r") as archivo:
                     #     contendio = archivo.read()
@@ -1333,32 +1337,43 @@ def p_comando_rep(p):
                         contendio = archivo.read()
                     
                     cont = 0
-                    dot = """node [shape=record];
-                    struct3 [label=" """
+                    dot = """struct3 [label=" """
+                    dot = ""
                     
+                    pal = 0
                     for _ in range(int(contendio)):
                         dot += repo.rep_bm_inode(cont)
                         # dot += """&#92;n"""
-                        cont += 64+64
-                    dot += """ "]; """
+                        if pal >= 20:
+                            dot += """&#92;n"""
+                            pal = 0
+
+                        cont += 64+64   
+                        pal += 1
+                    # dot += """ ]; """
                     graficas.rep_BM_INODES_1(dot)
                     print("")
 
 
                 elif name_rep.lower() == "bm_block":
+                    salida_consola("Creando Reporte BM_BLOCK\n")
+                    print("REP BM_BLOCK")
                     contendio = ""
-                    with open("BackEnd/Reportes/b_block.txt","r") as archivo:
-                        contendio = archivo.read()
-                        print(contendio)
+                    # with open("BackEnd/Reportes/b_block.txt","r") as archivo:
+                    #     contendio = archivo.read()
+                    #     print(contendio)
                     print("")
                 elif name_rep.lower() == "tree":
+                    salida_consola("Creando Reporte TREE\n")
                     graficas.rep_Tree()
                     print("")
                 elif name_rep.lower() == "sb":
+                    salida_consola("Creando Reporte SUPER BLOQUE\n")
                     if e_local == False:
                         repo.repSuperBloque()
                     print("")
                 elif name_rep.lower() == "file":
+                    salida_consola("Creando Reporte FILE\n")
                     print(f"RUTA: {ruta_rep}")
                     name_ruta = os.path.basename(ruta_rep)
                     contendio = ""
@@ -1376,7 +1391,7 @@ def p_comando_rep(p):
                             contador += 128
                         contador = 0
                     
-
+                    graficas.rep_file()
                     print("")
                 elif name_rep.lower() == "ls":
                     graficas.rep_LS()
