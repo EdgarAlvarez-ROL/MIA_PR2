@@ -192,5 +192,5 @@ def ver_reportes():
 if __name__ == '__main__':
     # Especifica la IP y el puerto aquí
     # Por ejemplo, para usar la IP 0.0.0.0 (todas las interfaces) y el puerto 5000:
-    app.run(port=3000, host='127.0.1.2', debug=True) #host='0.0.0.0', debug=True
+    app.run() #host='0.0.0.0', debug=True
 

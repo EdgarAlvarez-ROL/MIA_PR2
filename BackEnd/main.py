@@ -1383,6 +1383,8 @@ def p_comando_rep(p):
                     lista = [name_ruta]
                     contador = 0
                     data_valor = ""
+
+                    
                     for arch_list in lista:
                         # print(arch_list)
                         for _ in range(int(contendio)):
