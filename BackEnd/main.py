@@ -1254,7 +1254,7 @@ def p_comando_rep(p):
                 print(f"ID: {id_rep}")
                 print(f"NAME: {name_rep}")
 
-                path_del_disco =  r"/home/ubuntu/MIA_PR2/BackEnd/Discos" + "\\" + id_rep[3:] + ".dsk"
+                path_del_disco =  r"/home/ubuntu/MIA_PR2/BackEnd/Discos" + "/" + id_rep[3:] + ".dsk"
 
                 # if path_rep[1:3] != "tmp":
                 #     path_del_disco = r"/tmp/"+str(id_rep[3:])+".dsk" 
