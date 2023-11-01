@@ -13,7 +13,7 @@ usuarios = {'rol': '1234', 'pan': 'pan'}
 def login_users(id, user, password):
     # print(f"login -user={user} -pass={password} -id={id} ")
     # texto_ingreso = f"login -user={user} -pass={password} -id=441{id}"
-    with open("BackEnd\Discos\path_del_disco.txt","r") as archivo:
+    with open("BackEnd/Discos/path_del_disco.txt","r") as archivo:
             path_del_disco = archivo.read()
     
     # main.main_grammar(texto_ingreso)
@@ -67,7 +67,7 @@ def upload():
 
 
         try:
-            with open("BackEnd\contenidoTXT\contenido_ejecutar.txt","w") as archivo:
+            with open("/home/ubuntu/MIA_PR2/BackEnd/contenidoTXT/contenido_ejecutar.txt","w") as archivo:
                 archivo.write(contenido_ejecutar)
                 # print(f"contenido de {uploaded_file.filename} escrito en contenido_ejecutar")
         except Exception as e: 
@@ -96,7 +96,7 @@ def upload_usr():
 
 
         try:
-            with open("BackEnd\contenidoTXT\contenido_ejecutar.txt","w") as archivo:
+            with open("/home/ubuntu/MIA_PR2/BackEnd/contenidoTXT/contenido_ejecutar.txt","w") as archivo:
                 archivo.write(contenido_ejecutar)
                 #print(f"contenido de {uploaded_file.filename} escrito en contenido_ejecutar")
         except Exception as e: 
@@ -127,7 +127,7 @@ def ejecutar_comandos():
 
     texto = ""
     try:
-        with open("BackEnd\contenidoTXT\salida_consola.txt","w") as archivo:
+        with open("/home/ubuntu/MIA_PR2/BackEnd/contenidoTXT/salida_consola.txt","w") as archivo:
                 archivo.write(texto)
     except Exception as e: 
         print(str(e))
@@ -137,7 +137,7 @@ def ejecutar_comandos():
             for instruccion in lista_instrucciones:
                 main.main_grammar(instruccion)
           
-            with open("BackEnd\contenidoTXT\salida_consola.txt","r") as archivo:
+            with open("/home/ubuntu/MIA_PR2/BackEnd/contenidoTXT/salida_consola.txt","r") as archivo:
                 salida = archivo.read()
     
         except Exception as e: 
@@ -160,7 +160,7 @@ def ejecutar_comandos_usr():
 
     texto = ""
     try:
-        with open("BackEnd\contenidoTXT\salida_consola.txt","w") as archivo:
+        with open("/home/ubuntu/MIA_PR2/BackEnd/contenidoTXT/salida_consola.txt","w") as archivo:
                 archivo.write(texto)
     except Exception as e: 
         print(str(e))
@@ -170,7 +170,7 @@ def ejecutar_comandos_usr():
             for instruccion in lista_instrucciones:
                 main.main_grammar(instruccion)
           
-            with open("BackEnd\contenidoTXT\salida_consola.txt","r") as archivo:
+            with open("/home/ubuntu/MIA_PR2/BackEnd/contenidoTXT/salida_consola.txt","r") as archivo:
                 salida = archivo.read()
     
         except Exception as e: 
