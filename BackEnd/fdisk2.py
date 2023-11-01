@@ -14,14 +14,14 @@ class FDisk:
 
     def salida_consola(self,texto):
         try:
-            with open("BackEnd\contenidoTXT\salida_consola.txt","a") as archivo:
+            with open("/home/ubuntu/MIA_PR2/BackEnd/contenidoTXT/salida_consola.txt","a") as archivo:
                     archivo.write(texto)
         except Exception as e: 
             print(str(e))
 
     def consola_salida(texto):
         try:
-            with open("BackEnd\contenidoTXT\salida_consola.txt","a") as archivo:
+            with open("/home/ubuntu/MIA_PR2/BackEnd/contenidoTXT/salida_consola.txt","a") as archivo:
                     archivo.write(texto)
         except Exception as e: 
             print(str(e))
@@ -267,7 +267,7 @@ class FDisk:
                     nlogic.part_next = nlogic.part_start + nlogic.part_size + struct.calcsize("c2s3i3i16s")
                     if (ep.part_size - size) <= nlogic.part_size:
                         try:
-                            with open("BackEnd\contenidoTXT\salida_consola.txt","a") as archivo:
+                            with open("/home/ubuntu/MIA_PR2/BackEnd/contenidoTXT/salida_consola.txt","a") as archivo:
                                     archivo.write("no hay espacio para más particiones lógicas")
                         except Exception as e: 
                             print(str(e))
@@ -284,7 +284,7 @@ class FDisk:
                     name = nlogic.part_name
                     print(f"partición lógica: {name}, creada correctamente.")
                     try:
-                        with open("BackEnd\contenidoTXT\salida_consola.txt","a") as archivo:
+                        with open("/home/ubuntu/MIA_PR2/BackEnd/contenidoTXT/salida_consola.txt","a") as archivo:
                                 archivo.write(f"partición lógica: {name}, creada correctamente.")
                     except Exception as e: 
                         print(str(e))

@@ -12,7 +12,7 @@ ultimo_b_inodo = -1
 
 def salida_consola(texto):
         try:
-            with open("BackEnd\contenidoTXT\salida_consola.txt","a") as archivo:
+            with open("/home/ubuntu/MIA_PR2/BackEnd/contenidoTXT/salida_consola.txt","a") as archivo:
                     archivo.write(texto)
         except Exception as e: 
             print(str(e))
