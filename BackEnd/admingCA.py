@@ -18,12 +18,12 @@ def salida_consola(texto):
             print(str(e))
 
 def escribirUltimoInodo(endInodo):
-    with open("BackEnd/backs/endinodo.txt","w") as archivo:
+    with open("/home/ubuntu/MIA_PR2/BackEnd/backs/endinodo.txt","w") as archivo:
         archivo.write(str(endInodo))
 
 def leerUltimoInodo():
     contendio = ""
-    with open("BackEnd/backs/endinodo.txt","r") as archivo:
+    with open("/home/ubuntu/MIA_PR2/BackEnd/backs/endinodo.txt","r") as archivo:
         contendio = archivo.read()
     return int(contendio)
 
@@ -113,7 +113,7 @@ def leerBloquesFinal(path):
     # return (bloque_final)
 
     # Abre un archivo en modo escritura ('w' para escribir, 'a' para agregar al final)
-    with open("BackEnd/backs/block_final.txt", 'w') as archivo:
+    with open("/home/ubuntu/MIA_PR2/BackEnd/backs/block_final.txt", 'w') as archivo:
         # Escribe una cadena en el archivo
         archivo.write(str(bloque_final))
         # print("Bloque Final Guardado")
@@ -124,13 +124,13 @@ def leerBloquesFinal(path):
 
 def obtenerPP():
     contenido = ""
-    with open("BackEnd/backs/pp.txt","r") as pp_archivo:
+    with open("/home/ubuntu/MIA_PR2/BackEnd/backs/pp.txt","r") as pp_archivo:
         contenido = pp_archivo.read()
     return int(contenido)
 
 
 def escribirUltimoPP(pp):
-    with open("BackEnd/backs/pp.txt","w") as pp_archivo:
+    with open("/home/ubuntu/MIA_PR2/BackEnd/backs/pp.txt","w") as pp_archivo:
         pp_archivo.write(str(pp))
 
 def mkfile(path, ruta_ingresar_archivo, fisrt, user, permisos, uid, gid, relleno_Archivo):
@@ -304,7 +304,7 @@ def mkfile(path, ruta_ingresar_archivo, fisrt, user, permisos, uid, gid, relleno
     except Exception as e:
         print("\tERROR: No se pudo leer el disco en la ruta: " +path+", debido a: "+str(e))
                             
-    with open("BackEnd/backs/block_final.txt", 'w') as archivo:
+    with open("/home/ubuntu/MIA_PR2/BackEnd/backs/block_final.txt", 'w') as archivo:
                     archivo.write(str(bloque_start))
     """"""
     
@@ -476,14 +476,14 @@ def mkdir(path, ruta, fisrt, permisos, uid, gid):
     except Exception as e:
         print("\tERROR: No se pudo leer el disco en la ruta: " +path+", debido a: "+str(e))
                             
-    with open("BackEnd/backs/block_final.txt", 'w') as archivo:
+    with open("/home/ubuntu/MIA_PR2/BackEnd/backs/block_final.txt", 'w') as archivo:
                     archivo.write(str(bloque_start))
     """"""
 
 
 def b_block(carpetas):
     contenido_actual = ""
-    with open('BackEnd/Reportes/b_block.txt', 'r') as archivo:
+    with open('/home/ubuntu/MIA_PR2/BackEnd/Reportes/b_block.txt', 'r') as archivo:
         contenido_actual = archivo.read()
 
     bas = ""
@@ -491,16 +491,16 @@ def b_block(carpetas):
         bas += "1"
     
     contenidoCompleto = bas + contenido_actual
-    with open('BackEnd/Reportes/b_inode.txt', 'w') as archivo:
+    with open('/home/ubuntu/MIA_PR2/BackEnd/Reportes/b_inode.txt', 'w') as archivo:
         archivo.write(contenidoCompleto)
     
-    with open('BackEnd/Reportes/b_block.txt', 'w') as archivo:
+    with open('/home/ubuntu/MIA_PR2/BackEnd/Reportes/b_block.txt', 'w') as archivo:
         archivo.write(contenidoCompleto)
 
 
 def leerFinalSecond():
     contenido = ""
-    with open("BackEnd/backs/block_final.txt", 'r') as archivo:
+    with open("/home/ubuntu/MIA_PR2/BackEnd/backs/block_final.txt", 'r') as archivo:
         # Escribe una cadena en el archivo
         contenido = archivo.read()
         # print("Bloque Final Guardado")
@@ -966,7 +966,7 @@ def reporteFILE(path, buscar,contador,path_rep):
 
 # """"""
 # contendio = ""
-# with open("BackEnd/backs/endinodo.txt","r") as archivo:
+# with open("/home/ubuntu/MIA_PR2/BackEnd/backs/endinodo.txt","r") as archivo:
 #     contendio = archivo.read()
    
 # cont = 0

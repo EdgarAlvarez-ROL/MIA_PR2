@@ -13,7 +13,7 @@ usuarios = {'rol': '1234', 'pan': 'pan'}
 def login_users(id, user, password):
     # print(f"login -user={user} -pass={password} -id={id} ")
     # texto_ingreso = f"login -user={user} -pass={password} -id=441{id}"
-    with open("BackEnd/Discos/path_del_disco.txt","r") as archivo:
+    with open("/home/ubuntu/MIA_PR2/BackEnd/Discos/path_del_disco.txt","r") as archivo:
             path_del_disco = archivo.read()
     
     # main.main_grammar(texto_ingreso)
