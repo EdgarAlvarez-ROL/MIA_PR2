@@ -1382,6 +1382,8 @@ def p_comando_rep(p):
                     
                     lista = [name_ruta]
                     contador = 0
+
+                    ## nuevo data valor file
                     data_valor = ""
 
                     
@@ -1389,10 +1391,14 @@ def p_comando_rep(p):
                         # print(arch_list)
                         for _ in range(int(contendio)):
                             # buscarCAT(path, arch_list,contador)
-                            admingCA.reporteFILE(path_del_disco,arch_list,contador,path_rep)
+                            data_valor = admingCA.reporteFILE(path_del_disco,arch_list,contador,path_rep)
                             contador += 128
                         contador = 0
                     
+                    ## NUEVO DATAVALOR FILE
+                    with open(r"/home/ubuntu/MIA_PR2/BackEnd/static/reportes_pdf/file.txt", "w") as file:
+                        file.write(data_valor)
+
                     graficas.rep_file()
                     print("")
                 elif name_rep.lower() == "ls":

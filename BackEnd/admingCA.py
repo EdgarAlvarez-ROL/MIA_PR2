@@ -838,6 +838,10 @@ def buscarCAT(path, buscar,contador):
 
 
 def reporteFILE(path, buscar,contador,path_rep):
+    
+    ## nuevo data valor file
+    retorno_filecontent = ""
+
     mbr_format = "<iiiiB"
     mbr_size = struct.calcsize(mbr_format)
     # partition_format = "c2s3i3i16s"
@@ -935,6 +939,9 @@ def reporteFILE(path, buscar,contador,path_rep):
 
                     text_rc = f"Archivo Encontrado.\nDatos del archivo {buscar}: {soy}"
                     salida_consola(text_rc)
+                    
+                    ## nuevo data valor file
+                    retorno_filecontent = str(buscar)
                 
                 
                 except Exception as e:
@@ -948,6 +955,8 @@ def reporteFILE(path, buscar,contador,path_rep):
             #     ultimo_b_inodo = entero
             posicion += tamanio_struct
     
+    ## nuevo data valor file
+    return retorno_filecontent
          
 
 
