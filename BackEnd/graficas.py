@@ -3,7 +3,7 @@ import graphviz
 import re
 
 def rep_MBR(table_content):
-    s = graphviz.Digraph('MBR', filename=r'BackEnd/static/reportes_pdf/MBR.pdf',
+    s = graphviz.Digraph('MBR', filename=r'/home/ubuntu/MIA_PR2/BackEnd/static/reportes_pdf/MBR.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
@@ -20,7 +20,7 @@ def rep_MBR(table_content):
 
 
 def rep_FDISK(total, part1, part2, part3, part4):
-    s = graphviz.Digraph('DISK', filename=r'BackEnd/static/reportes_pdf/DISK.pdf',
+    s = graphviz.Digraph('DISK', filename=r'/home/ubuntu/MIA_PR2/BackEnd/static/reportes_pdf/DISK.pdf',
                      node_attr={'shape': 'plaintext'})
     if part4 > total:
         part4 = 0
@@ -45,7 +45,7 @@ def rep_FDISK(total, part1, part2, part3, part4):
 
 
 def rep_SB(dot): 
-    s = graphviz.Digraph('SB', filename=r'BackEnd/static/reportes_pdf/SB.pdf',
+    s = graphviz.Digraph('SB', filename=r'/home/ubuntu/MIA_PR2/BackEnd/static/reportes_pdf/SB.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
@@ -56,7 +56,7 @@ def rep_SB(dot):
 
 
 def rep_INODES(dot):
-    s = graphviz.Digraph('INODES', filename=r'BackEnd/static/reportes_pdf/INODES.pdf',
+    s = graphviz.Digraph('INODES', filename=r'/home/ubuntu/MIA_PR2/BackEnd/static/reportes_pdf/INODES.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
@@ -68,7 +68,7 @@ def rep_INODES(dot):
 
 
 def rep_BLOQUES(dot):
-    s = graphviz.Digraph('BLOCKS', filename=r'BackEnd/static/reportes_pdf/BLOCKS.pdf',
+    s = graphviz.Digraph('BLOCKS', filename=r'/home/ubuntu/MIA_PR2/BackEnd/static/reportes_pdf/BLOCKS.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
@@ -79,7 +79,7 @@ def rep_BLOQUES(dot):
 
 
 def rep_BM_INODES_1(dot):
-    s = graphviz.Digraph('BM_INODES', filename=r'BackEnd/static/reportes_pdf/BM_INODES.pdf',
+    s = graphviz.Digraph('BM_INODES', filename=r'/home/ubuntu/MIA_PR2/BackEnd/static/reportes_pdf/BM_INODES.pdf',
                      node_attr={'shape': 'record'})
 
     # print(table_content)
@@ -91,7 +91,7 @@ def rep_BM_INODES_1(dot):
 
 
 def rep_Journaling():
-    s = graphviz.Digraph('JS', filename=r'BackEnd/static/reportes_pdf/Journaling.pdf',
+    s = graphviz.Digraph('JS', filename=r'/home/ubuntu/MIA_PR2/BackEnd/static/reportes_pdf/Journaling.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
@@ -113,7 +113,7 @@ def rep_Journaling():
 
 
 def rep_LS():
-    s = graphviz.Digraph('LS', filename=r'BackEnd/static/reportes_pdf/LS.pdf',
+    s = graphviz.Digraph('LS', filename=r'/home/ubuntu/MIA_PR2/BackEnd/static/reportes_pdf/LS.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
@@ -147,7 +147,7 @@ def rep_LS():
 
 
 def rep_Tree():
-    s = graphviz.Digraph('TREE', filename=r'BackEnd/static/reportes_pdf/TREE.pdf',
+    s = graphviz.Digraph('TREE', filename=r'/home/ubuntu/MIA_PR2/BackEnd/static/reportes_pdf/TREE.pdf',
                      node_attr={'shape': 'plaintext'})
 
     # print(table_content)
@@ -167,11 +167,11 @@ def rep_Tree():
 
 
 def rep_file():
-    s = graphviz.Digraph('FILE', filename=r'BackEnd/static/reportes_pdf/Rep_FILE.pdf',
+    s = graphviz.Digraph('FILE', filename=r'/home/ubuntu/MIA_PR2/BackEnd/static/reportes_pdf/Rep_FILE.pdf',
                      node_attr={'shape': 'plaintext'})
     
     dpt = ""
-    with open(r"BackEnd/static/reportes_pdf/file.txt", "r") as file:
+    with open(r"/home/ubuntu/MIA_PR2/BackEnd/static/reportes_pdf/file.txt", "r") as file:
         dot = file.read()
         print(dot)
 
